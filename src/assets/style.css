@@ -36,6 +36,9 @@ body {
 }
 /* SignUp Component */
 
+/* .form {
+} */
+
 .form-input {
   display: flex;
   flex-direction: column;
@@ -49,10 +52,11 @@ body {
 .sign-button {
   width: 30%;
   padding: 3%;
+  font-weight: 700;
   margin-top: 5%;
-  color: azure;
+  color: rgb(0, 0, 0);
   border: none;
-  background-color: black;
+  background-color: #c9d1d9;
   border-radius: 15px;
 }
 
