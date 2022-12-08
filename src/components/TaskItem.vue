@@ -2,7 +2,20 @@
   <div class="container">
     <h3>{{ task.title }}</h3>
     <p>{{ task.description }}</p>
-    <button @click="deleteTask">Delete</button>
+    <div v-show="editTask">
+      <input type="text" placeholder="Title" v-model="title" name="title" />
+      <input
+        type="text"
+        placeholder="Description"
+        v-model="description"
+        name="description"
+      />
+      <button @click="updateTask">Save(icono save)</button>
+    </div>
+    <button @click="deleteTask">Delete(papelera)</button>
+    <input type="checkbox" @click="toogleTask" v-model="task.is_complete" />
+    <button @click="showHide" class="">Edit(poner un lapiz)</button>
+    <p>{{ task.is_complete }}</p>
   </div>
 </template>
 
@@ -11,18 +24,38 @@ import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
 
+const title = ref(props.task.title);
+const description = ref(props.task.description);
+const editTask = ref(false);
+
+const showHide = () => {
+  editTask.value = !editTask.value;
+};
+
 const taskStore = useTaskStore();
 
 const props = defineProps({
   task: Object,
 });
 
+const emit = defineEmits(["deleteTask", "toogleTask", "getTasks"]);
+
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
-const emit = defineEmits(["deleteTask"]);
 
 const deleteTask = async () => {
   await taskStore.deleteTask(props.task.id);
   emit("deleteTask");
+};
+
+const toogleTask = async () => {
+  await taskStore.toogleTask(props.task.id);
+  emit("toogleTask");
+};
+
+const updateTask = async () => {
+  showHide();
+  await taskStore.refreshTask(title.value, description.value, props.task.id);
+  emit("getTasks");
 };
 </script>
 
