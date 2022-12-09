@@ -11,12 +11,21 @@
     "
     alt="Profile picture"
   />
+
   <div>
-    <button>User config</button>
+    <button @click="configProfile">User config</button>
   </div>
-  <div>
-    <label for="username">Username :</label>
+  <div v-show="editProfile">
+    <label for="username">Username: </label>
     <input type="text" name="username" id="" v-model="username" />
+    <br />
+    <label for="name">Name: </label>
+    <input type="text" name="Name" id="" />
+    <br />
+    <label for="avatar_url">Avatar: </label>
+    <input type="text" name="avatar_url" id="" />
+    <br />
+    <button>Save</button>
   </div>
 </template>
 
@@ -38,17 +47,24 @@ const profile = ref({
 
 const username = ref(null);
 const avatar_url = ref(null);
+const name = ref(null);
 
 // PROFILE
 
 const getProfile = async () => {
   await userStore.fetchUser();
   profile.value = userStore.profile;
-  console.log(profile.value);
   username.value = profile.value.username;
   avatar_url.value = profile.value.avatar_url;
+  name.value = profile.value.name;
 };
 getProfile();
+
+const editProfile = ref(false);
+
+const configProfile = () => {
+  editProfile.value = !editProfile.value;
+};
 </script>
 
 <style>
