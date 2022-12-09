@@ -1,6 +1,8 @@
 <template>
   <Nav />
+
   <h1>Name: {{ username }}</h1>
+
   <img
     :src="
       avatar_url
@@ -9,47 +11,50 @@
     "
     alt="Profile picture"
   />
+  <div>
+    <button>User config</button>
+  </div>
+  <div>
+    <label for="username">Username :</label>
+    <input type="text" name="username" id="" v-model="username" />
+  </div>
 </template>
 
 <script setup>
-import { supabase } from "../supabase";
 import { onMounted, ref, toRefs } from "vue";
 import { useUserStore } from "../stores/user";
 import Nav from "../components/Nav.vue";
 
 const userStore = useUserStore();
 
-// const loading = ref(false);
-const username = ref(null);
-// const website = ref(null);
-const avatar_url = ref(null);
-
-onMounted(() => {
-  getProfile();
+const profile = ref({
+  avatar_url: "",
+  created_at: "",
+  name: "",
+  user_id: "",
+  username: "",
+  website: "",
 });
 
-async function getProfile() {
-  await userStore.fetchUser();
-  username.value = userStore.profile.username;
-  avatar_url.value = userStore.profile.avatar_url;
-}
+const username = ref(null);
+const avatar_url = ref(null);
 
-// async function signOut() {
-//   try {
-//     loading.value = true
-//     let { error } = await supabase.auth.signOut()
-//     if (error) throw error
-//   } catch (error) {
-//     alert(error.message)
-//   } finally {
-//     loading.value = false
-//   }
-// }
+// PROFILE
+
+const getProfile = async () => {
+  await userStore.fetchUser();
+  profile.value = userStore.profile;
+  console.log(profile.value);
+  username.value = profile.value.username;
+  avatar_url.value = profile.value.avatar_url;
+};
+getProfile();
 </script>
 
 <style>
 img {
   width: 200px;
+
   border-radius: 50%;
 }
 </style>
