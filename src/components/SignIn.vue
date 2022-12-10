@@ -27,9 +27,7 @@
             required
           />
         </div>
-        <div class="form-input">
-          <button class="sign-button" type="submit">Sign In</button>
-        </div>
+        <button class="sign-button" type="submit">Sign In</button>
       </div>
     </form>
     <p class="account-question">
@@ -41,6 +39,7 @@
       />
     </p>
   </div>
+  <div v-show="errorMsg">{{ errorMsg }}</div>
 </template>
 
 <script setup>

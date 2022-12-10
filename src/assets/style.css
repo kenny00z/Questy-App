@@ -3,15 +3,44 @@
 /* font-family: 'Indie Flower', cursive; PARA TEXTOS "BONITOS" o de detalle.
 font-family: 'Klee One', cursive; PARA h3/h4 y algunos <p>
 font-family: 'Nunito', sans-serif;  PARA TITULOS h1/h2*/
+
+* {
+  /* outline: 1px red solid; */
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Nunito", "sans-serif";
 }
 
 /* SignIn/Login Component */
+.container {
+  margin-top: 80px;
+  padding: 0 5px;
+}
+.header {
+}
+
+.sign-up-container {
+  background-image: url(/assets/imgs/decágono_verde-sin\ fondo.png);
+  background-size: cover;
+  margin-right: auto;
+  margin-left: auto;
+  background-repeat: no-repeat;
+  height: 300px;
+  max-width: 300px;
+  opacity: 0.75;
+}
+
+/* PREGUNTAR SOBRE LE TEMA OPACITY (LO DE HACER UN PSEUDO SELECTOR ETC */
+.section-container {
+}
+
 .header-title {
   font-weight: 800;
   font-size: 130%;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .header-subtitle {
@@ -34,30 +63,36 @@ body {
   border-radius: 10px;
   padding: 5px;
 }
-/* SignUp Component */
-
-/* .form {
-} */
 
 .form-input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 60px;
+}
+/* SignUp Component */
+
+.form {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .input-field-label {
-  margin-bottom: 0.3%;
+}
+.input-field {
+  margin-top: 8px;
 }
 
 .sign-button {
-  width: 30%;
-  padding: 3%;
-  font-weight: 700;
-  margin-top: 5%;
-  color: rgb(0, 0, 0);
-  border: none;
-  background-color: #c9d1d9;
-  border-radius: 15px;
+  color: rgb(68, 202, 86);
+  text-decoration: none;
+  background-color: black;
+  border: 1px solid rgb(255, 0, 0);
+  border-radius: 10px;
+  padding: 5px;
 }
 
 /* Home view */

@@ -1,7 +1,8 @@
 <template>
   <Nav />
 
-  <h1>Name: {{ username }}</h1>
+  <h2>Name: {{ name }}</h2>
+  <h2>Username: {{ username }}</h2>
 
   <img
     :src="
@@ -20,12 +21,12 @@
     <input type="text" name="username" id="" v-model="username" />
     <br />
     <label for="name">Name: </label>
-    <input type="text" name="Name" id="" />
+    <input type="text" name="name" id="" v-model="name" />
     <br />
     <label for="avatar_url">Avatar: </label>
-    <input type="text" name="avatar_url" id="" />
+    <input type="text" name="avatar_url" id="" v-model="avatar_url" />
     <br />
-    <button>Save</button>
+    <button type="submit" @click="updateProfile">Save</button>
   </div>
 </template>
 
@@ -48,6 +49,7 @@ const profile = ref({
 const username = ref(null);
 const avatar_url = ref(null);
 const name = ref(null);
+const user_id = ref(null);
 
 // PROFILE
 
@@ -57,6 +59,7 @@ const getProfile = async () => {
   username.value = profile.value.username;
   avatar_url.value = profile.value.avatar_url;
   name.value = profile.value.name;
+  user_id.value = profile.value.user_id;
 };
 getProfile();
 
@@ -64,6 +67,20 @@ const editProfile = ref(false);
 
 const configProfile = () => {
   editProfile.value = !editProfile.value;
+};
+
+const updateProfile = async () => {
+  await userStore.refreshProfile(
+    name.value,
+    username.value,
+    avatar_url.value,
+    user_id.value
+  );
+  refresh();
+};
+
+const refresh = () => {
+  window.location.reload();
 };
 </script>
 
