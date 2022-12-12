@@ -17,8 +17,12 @@
       :task="task"
     />
   </div>
+  <!-- <div class="jesus-blur">
+    <h1>Soy jesus</h1>
+    <p>me encanta programar</p>
+  </div> -->
 
-  <footer>FOOTER</footer>
+  <Footer />
 </template>
 
 <script setup>
@@ -28,6 +32,7 @@ import { useRouter } from "vue-router";
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
+import Footer from "../components/Footer.vue";
 
 const taskStore = useTaskStore();
 
@@ -36,6 +41,7 @@ const tasks = ref([]);
 
 // Creamos una función que conecte a la store para conseguir las tareas de supabase
 const getTasks = async () => {
+  console.log("Estamos en get Tasks!");
   tasks.value = await taskStore.fetchTasks();
 };
 
@@ -45,13 +51,14 @@ const deleteTask = async () => {
   tasks.value = await taskStore.fetchTasks();
 };
 
-deleteTask();
+//deleteTask();
 
 const toogleTask = async () => {
   tasks.value = await taskStore.fetchTasks();
+  console.log("Estamos en toggle task emit de home :)");
 };
 
-toogleTask();
+//toogleTask();
 </script>
 
 <style></style>

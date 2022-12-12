@@ -1,54 +1,57 @@
 <!-- COMPONENTE BOILERPLATE -->
 
 <template>
-  <div class="header">
-    <div class="header-container">
-      <h3 class="header-title">Register to Questy App</h3>
-      <p class="header-subtitle">Start organizing your quests!</p>
+  <div class="jesus-sign">
+    <div class="header">
+      <div class="header-container">
+        <h3 class="header-title">Register to Questy App</h3>
+        <p class="header-subtitle">Start organizing your quests!</p>
+      </div>
     </div>
-  </div>
-  <div class="container">
-    <h3 class="create-title">Log In to Tasky App</h3>
-    <div class="sign-up-container">
-      <form @submit.prevent="signIn" class="form-sign-in">
-        <div class="form">
-          <div class="form-input">
-            <label class="input-field-label">E-mail</label>
-            <input
-              type="email"
-              class="input-field"
-              placeholder="example@gmail.com"
-              id="email"
-              v-model="email"
-              required
-            />
-          </div>
-          <div class="form-input">
-            <label class="input-field-label">Password</label>
-            <input
-              type="password"
-              class="input-field"
-              placeholder="**********"
-              id="password"
-              v-model="password"
-              required
-            />
-          </div>
 
-          <button class="sign-button" type="submit">Sign In</button>
-        </div>
-      </form>
+    <div class="container">
+      <h3 class="create-title">Log In to Tasky App</h3>
+      <div class="sign-up-container">
+        <form @submit.prevent="signIn" class="form-sign-in">
+          <div class="form">
+            <div class="form-input">
+              <label class="input-field-label">E-mail</label>
+              <input
+                type="email"
+                class="input-field"
+                placeholder="example@gmail.com"
+                id="email"
+                v-model="email"
+                required
+              />
+            </div>
+            <div class="form-input">
+              <label class="input-field-label">Password</label>
+              <input
+                type="password"
+                class="input-field"
+                placeholder="**********"
+                id="password"
+                v-model="password"
+                required
+              />
+            </div>
+
+            <button class="sign-button" type="submit">Sign In</button>
+          </div>
+        </form>
+      </div>
+      <p class="account-question" id="question-login">
+        Dont have an account?
+        <PersonalRouter
+          :route="route"
+          :buttonText="buttonText"
+          class="sign-link"
+        />
+      </p>
     </div>
-    <p class="account-question" id="question-login">
-      Dont have an account?
-      <PersonalRouter
-        :route="route"
-        :buttonText="buttonText"
-        class="sign-link"
-      />
-    </p>
+    <div v-show="errorMsg">{{ errorMsg }}</div>
   </div>
-  <div v-show="errorMsg">{{ errorMsg }}</div>
   <footer>FOOTER</footer>
 </template>
 
@@ -58,6 +61,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { supabase } from "../supabase";
+import Footer from "../components/Footer.vue";
 
 // Route Variables
 const route = "/auth/signup";

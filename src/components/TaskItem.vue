@@ -1,7 +1,12 @@
 <template>
   <div class="task-container">
-    <h3>{{ task.title }}</h3>
-    <p>{{ task.description }}</p>
+    <div class="task-btn-container">
+      <button class="btn-delete" @click="deleteTask"></button>
+      <button class="btn-edit" @click="showHide"></button>
+      <button class="btn-check" @click="toogleTask">
+        {{ task.is_complete ? "descompletar" : "completar" }}
+      </button>
+    </div>
     <div v-show="editTask">
       <input type="text" placeholder="Title" v-model="title" name="title" />
       <input
@@ -12,10 +17,13 @@
       />
       <button @click="updateTask">Save(icono save)</button>
     </div>
-    <button @click="deleteTask">Delete(papelera)</button>
-    <input type="checkbox" @click="toogleTask" v-model="task.is_complete" />
-    <button @click="showHide" class="">Edit(poner un lapiz)</button>
-    <p>{{ task.is_complete }}</p>
+    <div class="task-text-container">
+      <div class="task-text">
+        <h3 class="task-title">{{ task.title }}</h3>
+        <p class="task-description">{{ task.description }}</p>
+      </div>
+      <p>{{ task.is_complete }}</p>
+    </div>
   </div>
 </template>
 
@@ -48,7 +56,8 @@ const deleteTask = async () => {
 };
 
 const toogleTask = async () => {
-  await taskStore.toogleTask(props.task.id);
+  console.log("Estoy mandando a la store: ", props.task.is_complete);
+  await taskStore.toogleTask(props.task.id, props.task.is_complete);
   emit("toogleTask");
 };
 

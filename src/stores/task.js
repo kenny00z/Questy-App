@@ -33,11 +33,15 @@ export const useTaskStore = defineStore("tasks", {
         id: id,
       });
     },
-    async toogleTask(id) {
+    async toogleTask(id, boolean) {
+      console.log(
+        "En store estoy recibiendo para mandar a supabase: ",
+        boolean
+      );
       const { data, error } = await supabase
         .from("tasks")
         .update({
-          is_complete: (this.is_complete = this.is_complete ? false : true),
+          is_complete: !boolean,
         })
         .match({
           id: id,

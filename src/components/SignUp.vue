@@ -1,61 +1,63 @@
 <template>
-  <div class="header">
-    <div class="header-container">
-      <h3 class="header-title">Register to Questy App</h3>
-      <p class="header-subtitle">Start organizing your quests!</p>
+  <div class="jesus-sign">
+    <div class="header">
+      <div class="header-container">
+        <h3 class="header-title">Register to Questy App</h3>
+        <p class="header-subtitle">Start organizing your quests!</p>
+      </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="section-container">
-      <h3 class="create-title">Create your account!</h3>
-      <div class="sign-up-container">
-        <form @submit.prevent="signUp" class="form-sign-in">
-          <div class="form">
-            <div class="form-input">
-              <label class="input-field-label">E-mail</label>
-              <input
-                type="email"
-                class="input-field"
-                placeholder="example@gmail.com"
-                id="email"
-                v-model="email"
-                required
-              />
+    <div class="container">
+      <div class="section-container">
+        <h3 class="create-title">Create your account!</h3>
+        <div class="sign-up-container">
+          <form @submit.prevent="signUp" class="form-sign-in">
+            <div class="form">
+              <div class="form-input">
+                <label class="input-field-label">E-mail</label>
+                <input
+                  type="email"
+                  class="input-field"
+                  placeholder="example@gmail.com"
+                  id="email"
+                  v-model="email"
+                  required
+                />
+              </div>
+              <div class="form-input">
+                <label class="input-field-label">Password</label>
+                <input
+                  type="password"
+                  class="input-field"
+                  placeholder="**********"
+                  id="password"
+                  v-model="password"
+                  required
+                />
+              </div>
+              <div class="form-input">
+                <label class="input-field-label">Confirm password</label>
+                <input
+                  type="password"
+                  class="input-field"
+                  placeholder="**********"
+                  id="confirmPassword"
+                  v-model="confirmPassword"
+                  required
+                />
+              </div>
+              <button class="sign-button" type="submit">Sign Up</button>
             </div>
-            <div class="form-input">
-              <label class="input-field-label">Password</label>
-              <input
-                type="password"
-                class="input-field"
-                placeholder="**********"
-                id="password"
-                v-model="password"
-                required
+            <p class="account-question">
+              Have an account?
+              <PersonalRouter
+                :route="route"
+                :buttonText="buttonText"
+                class="sign-link"
               />
-            </div>
-            <div class="form-input">
-              <label class="input-field-label">Confirm password</label>
-              <input
-                type="password"
-                class="input-field"
-                placeholder="**********"
-                id="confirmPassword"
-                v-model="confirmPassword"
-                required
-              />
-            </div>
-            <button class="sign-button" type="submit">Sign Up</button>
-          </div>
-          <p class="account-question">
-            Have an account?
-            <PersonalRouter
-              :route="route"
-              :buttonText="buttonText"
-              class="sign-link"
-            />
-          </p>
-          <div v-show="errorMsg">{{ errorMsg }}</div>
-        </form>
+            </p>
+            <div v-show="errorMsg">{{ errorMsg }}</div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -70,6 +72,7 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
+import Footer from "../components/Footer.vue";
 
 // Route Variables
 const route = "/auth/login";
