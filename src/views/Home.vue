@@ -1,7 +1,7 @@
 <template>
-  <div class="wrapper">
-    <Nav />
+  <Nav />
 
+  <div class="jesus">
     <div class="content">
       <h3>Your account:</h3>
       <router-link to="/account">Account</router-link>
@@ -17,6 +17,8 @@
       :task="task"
     />
   </div>
+
+  <footer>FOOTER</footer>
 </template>
 
 <script setup>

@@ -12,10 +12,6 @@ font-family: 'Nunito', sans-serif;  PARA TITULOS h1/h2*/
 
 body {
   font-family: "Nunito", "sans-serif";
-  background-image: url(/assets/imgs/GIF-BACKGROUND-2.gif);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 /*  SIGN IN/LOGIN COMPONENT */
@@ -132,13 +128,19 @@ body {
 
 /* HOME VIEW */
 
+.jesus {
+  background-image: url(/assets/imgs/GIF-BACKGROUND-2.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
 /* NAVBAR */
 
 nav {
   font-family: "Klee One", cursive;
   background-image: url(/assets/imgs/background-img2.jpg);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
@@ -207,4 +209,20 @@ li {
   border: 5px solid black;
   max-width: 300px;
 }
+
 /* ACCOUNT VIEW */
+
+.avatar-container {
+}
+
+.avatar-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-config-container {
+  display: flex;
+  flex-direction: column-reverse;
+}

@@ -1,8 +1,8 @@
 <template>
   <div class="header">
     <div class="header-container">
-      <h3 class="header-title">Register to Tasky App</h3>
-      <p class="header-subtitle">Start organizing your tasks!</p>
+      <h3 class="header-title">Register to Questy App</h3>
+      <p class="header-subtitle">Start organizing your quests!</p>
     </div>
   </div>
   <div class="container">
@@ -60,7 +60,7 @@
     </div>
   </div>
 
-  <footer></footer>
+  <footer>FOOTER</footer>
 </template>
 
 <script setup>
