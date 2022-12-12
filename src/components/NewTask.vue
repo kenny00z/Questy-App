@@ -3,18 +3,14 @@
   <div v-if="showErrorMessage">
     <p class="error-text">{{ errorMessage }}</p>
   </div>
-  <div>
-    <div class="input-field">
-      <input
-        type="text"
-        placeholder="Add a Task Title - Listen to Kendrick Lamar"
-        v-model="name"
-      />
+  <div class="add-task-container">
+    <div class="input-field-task">
+      <input type="text" placeholder="Add a Task Title" v-model="name" />
     </div>
-    <div class="input-field">
+    <div class="input-field-task">
       <input
         type="text"
-        placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album."
+        placeholder="Add a Task Description"
         v-model="description"
       />
     </div>

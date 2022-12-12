@@ -1,27 +1,30 @@
 <template>
   <nav>
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
-    <router-link to="/"> Home </router-link>
-
-    <ul>
-      <li>
-        <router-link to="/">Task Manager</router-link>
-      </li>
-
-      <li>
-        <router-link to="/account">Your Account</router-link>
-      </li>
-    </ul>
-
-    <div>
-      <ul>
-        <li class="log-out-welcome">
-          <p>Welcome</p>
+    <div class="menu-burger-container">
+      <input type="checkbox" id="burger-menu" />
+      <label class="burger-label" for="burger-menu">☰</label>
+      <ul class="burger-container">
+        <li class="">
+          <router-link class="router-link" to="/"> Home </router-link>
         </li>
-        <li>
-          <button @click="signOut" class="button">Log out</button>
+        <li class="">
+          <router-link class="router-link" to="/">Task Manager</router-link>
+        </li>
+        <li class="">
+          <router-link class="router-link" to="/account"
+            >Your Account</router-link
+          >
         </li>
       </ul>
+    </div>
+    <div class="log-out-container">
+      <div>
+        <p class="salute">Welcome {{ name }}</p>
+      </div>
+      <div>
+        <button @click="signOut" class="log-out-button">Log out</button>
+      </div>
     </div>
   </nav>
 </template>
@@ -44,6 +47,7 @@ const getUser = useUserStore().user;
 // constant that calls user email from the useUSerStore
 const userEmail = getUser.email;
 const errorMsg = ref("");
+
 // async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 const redirect = useRouter();
 
@@ -64,24 +68,4 @@ const signOut = async () => {
 };
 </script>
 
-<style>
-.navbar-img {
-  width: 90px;
-}
-
-nav {
-  background-color: lightgray;
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-}
-
-nav ul {
-  list-style: none;
-  padding-inline-start: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-</style>
+<style></style>

@@ -7,61 +7,100 @@ font-family: 'Nunito', sans-serif;  PARA TITULOS h1/h2*/
 * {
   /* outline: 1px red solid; */
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
   font-family: "Nunito", "sans-serif";
+  background-image: url(/assets/imgs/GIF-BACKGROUND-2.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* SignIn/Login Component */
-.container {
-  margin-top: 80px;
-  padding: 0 5px;
-}
+/*  SIGN IN/LOGIN COMPONENT */
+
 .header {
+  margin: 50px 5px;
 }
 
+.header-title {
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  font-size: 180%;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.header-subtitle {
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  text-align: center;
+  font-size: 120%;
+}
+
+.container {
+  margin: 0 5px;
+  font-family: "Klee One", cursive;
+  padding-top: 15px;
+  height: 500px;
+  background-image: url(/assets/imgs/background-img2.jpg);
+  border-radius: 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+}
+.create-title {
+  font-family: "Nunito", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 150%;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  text-align: center;
+}
 .sign-up-container {
-  background-image: url(/assets/imgs/decágono_verde-sin\ fondo.png);
+  background-image: url(/assets/imgs/decágono-final-1.jpg);
   background-size: cover;
   margin-right: auto;
   margin-left: auto;
   background-repeat: no-repeat;
-  height: 300px;
+  height: 310px;
   max-width: 300px;
-  opacity: 0.75;
 }
 
 /* PREGUNTAR SOBRE LE TEMA OPACITY (LO DE HACER UN PSEUDO SELECTOR ETC */
-.section-container {
-}
-
-.header-title {
-  font-weight: 800;
-  font-size: 130%;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.header-subtitle {
-  font-weight: 500;
-  text-align: center;
-}
 
 .account-question {
+  color: white;
   font-weight: 700;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 15px;
+}
+#question-login {
+  margin-top: -5px;
 }
 
-.sign-up-link {
-  color: rgb(68, 202, 86);
+.sign-link {
+  color: rgb(255, 254, 254);
   text-decoration: none;
-  background-color: black;
-  border: 1px solid rgb(255, 0, 0);
+  background-color: rgb(17, 128, 44);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 10px;
-  padding: 5px;
+  padding: 6px;
+  margin-top: 15px;
+}
+
+.sign-button {
+  font-family: "Klee One", cursive;
+  margin-top: 5px;
+  color: rgb(255, 254, 254);
+  text-decoration: none;
+  background-color: rgb(17, 128, 44);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 5px 10px;
 }
 
 .form-input {
@@ -70,7 +109,7 @@ body {
   align-items: center;
   height: 60px;
 }
-/* SignUp Component */
+/* SIGN UP COMPONENT */
 
 .form {
   height: 300px;
@@ -81,20 +120,91 @@ body {
 }
 
 .input-field-label {
+  margin-top: 5px;
+  font-size: 120%;
+  font-weight: 600;
 }
 .input-field {
-  margin-top: 8px;
+  margin-top: 0px;
+  border-radius: 25px;
+  padding: 3px;
 }
 
-.sign-button {
-  color: rgb(68, 202, 86);
+/* HOME VIEW */
+
+/* NAVBAR */
+
+nav {
+  font-family: "Klee One", cursive;
+  background-image: url(/assets/imgs/background-img2.jpg);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.router-link {
   text-decoration: none;
-  background-color: black;
-  border: 1px solid rgb(255, 0, 0);
-  border-radius: 10px;
-  padding: 5px;
+}
+.log-out-list ul {
+  list-style: none;
+  padding-inline-start: 0;
 }
 
-/* Home view */
+/* BURGER MENU */
+.menu-burger-container {
+  margin-top: 10px;
+}
 
-/* Account View */
+ul {
+  display: none;
+}
+
+input:checked ~ ul {
+  display: block;
+}
+#burger-menu {
+  display: none;
+}
+
+.burger-label {
+  color: white;
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+}
+
+li {
+  display: block;
+  background: rgb(126, 125, 125);
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 15px;
+}
+.burger-container {
+  width: 100%;
+  position: absolute;
+  left: -6%;
+  top: 6.5%;
+}
+/* BURGER DONE */
+.salute {
+  color: white;
+}
+/* NAVBAR */
+
+.task-container {
+  background-image: url(http://24.media.tumblr.com/7d44522a6bfc1770cf0037928a60e125/tumblr_mm371a40941rfjowdo1_500.gif);
+  background-repeat: no-repeat;
+  border: 5px solid black;
+  max-width: 300px;
+}
+/* ACCOUNT VIEW */

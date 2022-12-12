@@ -1,12 +1,13 @@
 <template>
-  <div class="container">
-    <div class="header">
-      <div class="header-description">
-        <h3 class="header-title">Register to ToDo App</h3>
-        <p class="header-subtitle">Start organizing your tasks!</p>
-      </div>
+  <div class="header">
+    <div class="header-container">
+      <h3 class="header-title">Register to Tasky App</h3>
+      <p class="header-subtitle">Start organizing your tasks!</p>
     </div>
+  </div>
+  <div class="container">
     <div class="section-container">
+      <h3 class="create-title">Create your account!</h3>
       <div class="sign-up-container">
         <form @submit.prevent="signUp" class="form-sign-in">
           <div class="form">
@@ -45,20 +46,21 @@
             </div>
             <button class="sign-button" type="submit">Sign Up</button>
           </div>
+          <p class="account-question">
+            Have an account?
+            <PersonalRouter
+              :route="route"
+              :buttonText="buttonText"
+              class="sign-link"
+            />
+          </p>
+          <div v-show="errorMsg">{{ errorMsg }}</div>
         </form>
-
-        <p class="account-question">
-          Have an account?
-          <PersonalRouter
-            :route="route"
-            :buttonText="buttonText"
-            class="sign-up-link"
-          />
-        </p>
       </div>
     </div>
-    <div v-show="errorMsg">{{ errorMsg }}</div>
   </div>
+
+  <footer></footer>
 </template>
 
 <script setup>
@@ -102,7 +104,7 @@ const signUp = async () => {
     }
     return;
   }
-  errorMsg.value = "error";
+  errorMsg.value = "Some fail on your register";
 };
 </script>
 

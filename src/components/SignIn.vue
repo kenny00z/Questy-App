@@ -1,41 +1,50 @@
 <!-- COMPONENTE BOILERPLATE -->
 
 <template>
+  <div class="header">
+    <div class="header-container">
+      <h3 class="header-title">Register to Tasky App</h3>
+      <p class="header-subtitle">Start organizing your tasks!</p>
+    </div>
+  </div>
   <div class="container">
-    <h3 class="header-title">Log In to ToDo App</h3>
-    <form @submit.prevent="signIn" class="form-sign-in">
-      <div class="form">
-        <div class="form-input">
-          <label class="input-field-label">E-mail</label>
-          <input
-            type="email"
-            class="input-field"
-            placeholder="example@gmail.com"
-            id="email"
-            v-model="email"
-            required
-          />
+    <h3 class="create-title">Log In to Tasky App</h3>
+    <div class="sign-up-container">
+      <form @submit.prevent="signIn" class="form-sign-in">
+        <div class="form">
+          <div class="form-input">
+            <label class="input-field-label">E-mail</label>
+            <input
+              type="email"
+              class="input-field"
+              placeholder="example@gmail.com"
+              id="email"
+              v-model="email"
+              required
+            />
+          </div>
+          <div class="form-input">
+            <label class="input-field-label">Password</label>
+            <input
+              type="password"
+              class="input-field"
+              placeholder="**********"
+              id="password"
+              v-model="password"
+              required
+            />
+          </div>
+
+          <button class="sign-button" type="submit">Sign In</button>
         </div>
-        <div class="form-input">
-          <label class="input-field-label">Password</label>
-          <input
-            type="password"
-            class="input-field"
-            placeholder="**********"
-            id="password"
-            v-model="password"
-            required
-          />
-        </div>
-        <button class="sign-button" type="submit">Sign In</button>
-      </div>
-    </form>
-    <p class="account-question">
+      </form>
+    </div>
+    <p class="account-question" id="question-login">
       Dont have an account?
       <PersonalRouter
         :route="route"
         :buttonText="buttonText"
-        class="sign-up-link"
+        class="sign-link"
       />
     </p>
   </div>

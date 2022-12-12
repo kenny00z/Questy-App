@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="task-container">
     <h3>{{ task.title }}</h3>
     <p>{{ task.description }}</p>
     <div v-show="editTask">
