@@ -1,28 +1,30 @@
 <template>
-  <div class="task-container">
-    <div class="task-btn-container">
-      <button class="btn-delete" @click="deleteTask"></button>
-      <button class="btn-edit" @click="showHide"></button>
-      <button class="btn-check" @click="toogleTask">
-        {{ task.is_complete ? "descompletar" : "completar" }}
-      </button>
-    </div>
-    <div v-show="editTask">
-      <input type="text" placeholder="Title" v-model="title" name="title" />
-      <input
-        type="text"
-        placeholder="Description"
-        v-model="description"
-        name="description"
-      />
-      <button @click="updateTask">Save(icono save)</button>
-    </div>
-    <div class="task-text-container">
-      <div class="task-text">
-        <h3 class="task-title">{{ task.title }}</h3>
-        <p class="task-description">{{ task.description }}</p>
+  <div class="all-task-container">
+    <div class="task-container">
+      <div class="task-btn-container">
+        <button class="btn-delete" @click="deleteTask"></button>
+        <button class="btn-edit" @click="showHide"></button>
+        <button class="btn-check" @click="toogleTask">
+          {{ task.is_complete ? "descompletar" : "completar" }}
+        </button>
       </div>
-      <p>{{ task.is_complete }}</p>
+      <div v-show="editTask">
+        <input type="text" placeholder="Title" v-model="title" name="title" />
+        <input
+          type="text"
+          placeholder="Description"
+          v-model="description"
+          name="description"
+        />
+        <button @click="updateTask">Save(icono save)</button>
+      </div>
+      <div class="task-text-container">
+        <div class="task-text">
+          <h3 class="task-title">{{ task.title }}</h3>
+          <p class="task-description">{{ task.description }}</p>
+        </div>
+        <p>{{ task.is_complete }}</p>
+      </div>
     </div>
   </div>
 </template>
