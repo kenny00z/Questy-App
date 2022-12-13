@@ -4,7 +4,7 @@
   <div class="jesus">
     <NewTask @getTasks="getTasks" />
     <div class="quest-title-container">
-      <h2 class="quest-title">Quests</h2>
+      <h2 class="quest-title">Quest Log</h2>
       <img
         class="exclamation-title-img"
         src="https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928349/Final-yisus-project/Icons/quest-icon-1-exlamation_cigbpo.png"

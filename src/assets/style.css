@@ -454,10 +454,10 @@ footer div {
 }
 
 .exclamation-title-img {
-  width: 4.2%;
+  width: 17px;
   background-color: rgba(0, 0, 0, 0.404);
   border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 13px;
 }
 
 /* HOME VIEW */
@@ -525,4 +525,24 @@ footer div {
   color: white;
 }
 
-/* MEDIAQUERY */
+/* MEDIA QUERY TABLET */
+@media (min-width: 700px) {
+  .jesus {
+    background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670843206/Final-yisus-project/Homeview/pixel-art-background-gif.gif);
+  }
+
+  .jesus-sign {
+    background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670843206/Final-yisus-project/Homeview/pixel-art-background-gif.gif);
+  }
+}
+
+/* MEDIAQUERY DESKTOP*/
+@media (min-width: 1023px min-height: 1279px) {
+  .jesus {
+    background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670843206/Final-yisus-project/Homeview/pixel-art-background-gif.gif);
+  }
+
+  .jesus-sign {
+    background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670843206/Final-yisus-project/Homeview/pixel-art-background-gif.gif);
+  }
+}
