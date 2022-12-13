@@ -37,7 +37,13 @@
         <label for="avatar_url">Avatar: </label>
         <input type="text" name="avatar_url" id="" v-model="avatar_url" />
         <br />
-        <button type="submit" @click="updateProfile">Save</button>
+        <button
+          class="btn-profile-changes"
+          type="submit"
+          @click="updateProfile"
+        >
+          Save changes!
+        </button>
       </div>
     </div>
   </div>

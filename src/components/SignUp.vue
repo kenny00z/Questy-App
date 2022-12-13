@@ -7,62 +7,66 @@
       </div>
     </div>
     <div class="container">
-      <div class="section-container">
-        <h3 class="create-title">Create your account!</h3>
-        <div class="sign-up-container">
-          <form @submit.prevent="signUp" class="form-sign-in">
-            <div class="form">
-              <div class="form-input">
-                <label class="input-field-label">E-mail</label>
-                <input
-                  type="email"
-                  class="input-field"
-                  placeholder="example@gmail.com"
-                  id="email"
-                  v-model="email"
-                  required
-                />
+      <div class="big-green-box"></div>
+      <section class="sign-in-form">
+        <div class="section-container">
+          <h3 class="create-title">Create your account!</h3>
+          <div class="sign-up-container">
+            <form @submit.prevent="signUp" class="form-sign-in">
+              <div class="form">
+                <div class="form-input">
+                  <label class="input-field-label">E-mail</label>
+                  <input
+                    type="email"
+                    class="input-field"
+                    placeholder="example@gmail.com"
+                    id="email"
+                    v-model="email"
+                    required
+                  />
+                </div>
+                <div class="form-input">
+                  <label class="input-field-label">Password</label>
+                  <input
+                    type="password"
+                    class="input-field"
+                    placeholder="**********"
+                    id="password"
+                    v-model="password"
+                    required
+                  />
+                </div>
+                <div class="form-input">
+                  <label class="input-field-label">Confirm password</label>
+                  <input
+                    type="password"
+                    class="input-field"
+                    placeholder="**********"
+                    id="confirmPassword"
+                    v-model="confirmPassword"
+                    required
+                  />
+                </div>
+                <button class="sign-button" type="submit">Sign Up</button>
               </div>
-              <div class="form-input">
-                <label class="input-field-label">Password</label>
-                <input
-                  type="password"
-                  class="input-field"
-                  placeholder="**********"
-                  id="password"
-                  v-model="password"
-                  required
+              <p class="account-question">
+                Have an account?
+                <PersonalRouter
+                  :route="route"
+                  :buttonText="buttonText"
+                  class="sign-link"
                 />
-              </div>
-              <div class="form-input">
-                <label class="input-field-label">Confirm password</label>
-                <input
-                  type="password"
-                  class="input-field"
-                  placeholder="**********"
-                  id="confirmPassword"
-                  v-model="confirmPassword"
-                  required
-                />
-              </div>
-              <button class="sign-button" type="submit">Sign Up</button>
-            </div>
-            <p class="account-question">
-              Have an account?
-              <PersonalRouter
-                :route="route"
-                :buttonText="buttonText"
-                class="sign-link"
-              />
-            </p>
-            <div v-show="errorMsg">{{ errorMsg }}</div>
-          </form>
+              </p>
+
+              <div class="error-msg" v-show="errorMsg">{{ errorMsg }}</div>
+            </form>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 
-  <footer>FOOTER</footer>
+  <Footer />
 </template>
 
 <script setup>

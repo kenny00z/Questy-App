@@ -2,12 +2,15 @@
   <Nav />
 
   <div class="jesus">
-    <div class="content">
-      <h3>Your account:</h3>
-      <router-link to="/account">Account</router-link>
-    </div>
     <NewTask @getTasks="getTasks" />
-    <h1>Tasks:</h1>
+    <div class="quest-title-container">
+      <h2 class="quest-title">Quests</h2>
+      <img
+        class="exclamation-title-img"
+        src="https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928349/Final-yisus-project/Icons/quest-icon-1-exlamation_cigbpo.png"
+        alt=""
+      />
+    </div>
     <TaskItem
       @toogleTask="toogleTask"
       @deleteTask="deleteTask"

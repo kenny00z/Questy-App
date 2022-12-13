@@ -12,12 +12,11 @@ font-family: 'Nunito', sans-serif;  PARA TITULOS h1/h2*/
 
 body {
   font-family: "Nunito", "sans-serif";
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 /*  SIGN IN/LOGIN COMPONENT */
-
-.header {
-}
 
 .header-title {
   font-weight: 800;
@@ -40,13 +39,32 @@ body {
   margin: 0 5px;
   font-family: "Klee One", cursive;
   padding-top: 15px;
-  background-image: url(/assets/imgs/background-img2.jpg);
-  border-radius: 50px;
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 500px;
   margin-bottom: 20px;
 }
+
+.big-green-box {
+  position: relative;
+  margin: 0 5px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Klee One", cursive;
+  padding-top: 15px;
+  height: 500px;
+  max-width: 350px;
+  margin-bottom: 20px;
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928396/Final-yisus-project/Homeview/background-img2_jy4dax.jpg);
+  border-radius: 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+.sign-in-form {
+  position: relative;
+  top: -500px;
+}
+
 .create-title {
   font-family: "Nunito", sans-serif;
   color: rgb(255, 255, 255);
@@ -56,7 +74,7 @@ body {
   text-align: center;
 }
 .sign-up-container {
-  background-image: url(/assets/imgs/decágono-final-1.jpg);
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928401/Final-yisus-project/Homeview/dec%C3%A1gono-final-1_rmblf3.png);
   background-size: cover;
   margin-right: auto;
   margin-left: auto;
@@ -67,8 +85,6 @@ body {
   max-width: 56vh; */
 }
 
-/* PREGUNTAR SOBRE LE TEMA OPACITY (LO DE HACER UN PSEUDO SELECTOR ETC */
-
 .account-question {
   color: white;
   font-weight: 700;
@@ -77,6 +93,12 @@ body {
   align-items: center;
   padding: 15px;
 }
+
+.error-msg {
+  color: white;
+  text-align: center;
+}
+
 #question-login {
   margin-top: -5px;
 }
@@ -171,6 +193,16 @@ nav {
   padding-inline-start: 0;
 }
 
+.log-out-button {
+  font-family: "Klee One", cursive;
+  color: rgb(255, 254, 254);
+  text-decoration: none;
+  background-color: rgb(17, 128, 44);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 3px 7px;
+}
+
 /* BURGER MENU */
 .menu-burger-container {
   margin-top: 10px;
@@ -228,6 +260,7 @@ footer {
   background-color: rgb(33, 53, 33);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
   height: 60px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -236,7 +269,48 @@ footer {
   border-top: 2px solid black;
 }
 
+footer div {
+  color: white;
+}
+
 /* FOOTER */
+
+/* NEW TASK */
+.new-task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.add-task-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-task-container input {
+  background-color: rgba(177, 107, 15, 0.603);
+  color: white;
+  border-radius: 15px;
+  border: 1px solid brown;
+  text-align: center;
+}
+.add-task-container input::placeholder {
+  color: white;
+}
+
+.add-quest-button {
+  margin-top: 1px;
+  border-radius: 15px;
+  background-color: rgba(177, 107, 15);
+  border: 1px solid black;
+  color: white;
+}
+
+.add-quest-button:hover {
+  background-color: rgb(17, 128, 44);
+}
+/* NEW TASK */
 
 /* TASKS STYLE */
 .all-task-container {
@@ -244,7 +318,7 @@ footer {
 }
 .task-container {
   color: white;
-  background-image: url(/assets/imgs/library-gif.gif);
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928391/Final-yisus-project/Homeview/library-gif_mjzhid.gif);
   background-repeat: no-repeat;
   background-size: cover;
   border: 5px solid black;
@@ -252,15 +326,25 @@ footer {
   height: 200px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 
 .btn-delete {
   background-color: red;
+
   border: 2px solid black;
   width: 25px;
   height: 25px;
   border-radius: 50%;
 }
+
+.trash-img {
+  width: 6%;
+  position: absolute;
+  top: 2.8px;
+  left: 3.5px;
+}
+
 .btn-edit {
   background-color: rgb(255, 251, 0);
   border: 2px solid black;
@@ -269,7 +353,26 @@ footer {
   border-radius: 50%;
 }
 
+.pencil-img {
+  width: 5.5%;
+  position: absolute;
+  top: 4px;
+  left: 29px;
+}
+
 .btn-check {
+  background-color: rgb(29, 201, 14);
+  border: 2px solid black;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.check-img {
+  width: 5%;
+  position: absolute;
+  top: 4.2px;
+  left: 55px;
 }
 
 .task-text-container {
@@ -296,9 +399,68 @@ footer {
   font-size: 30px;
   -webkit-text-stroke: 0.4px black;
   line-height: 100%;
+  overflow-wrap: break-word;
+}
+.edit-task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50px;
+  left: 58px;
+}
+
+.btn-save-edit {
+  background-color: rgb(14, 17, 201);
+  border: 2px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.save-edit-img {
+  width: 10%;
+  position: absolute;
+  top: 48px;
+  left: 80px;
+}
+
+.edit-task-container input {
+  background-color: #b16b0fe6;
+  color: white;
+  border-radius: 15px;
+  border: 2px solid rgb(3, 2, 6, 7);
+  text-align: center;
+}
+
+.edit-task-container input::placeholder {
+  color: white;
 }
 
 /* TASKS STYLE */
+
+.quest-title-container {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quest-title {
+  color: white;
+  font-size: 29px;
+  background-color: rgba(0, 0, 0, 0.404);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.exclamation-title-img {
+  width: 4.2%;
+  background-color: rgba(0, 0, 0, 0.404);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+/* HOME VIEW */
 
 /* ACCOUNT VIEW */
 
@@ -331,7 +493,11 @@ footer {
 }
 
 .user-config-btn {
-  width: 50%;
+  width: 200px;
+  border-radius: 15px;
+  background-color: rgba(177, 107, 15);
+  border: 1px solid black;
+  color: white;
 }
 
 .edit-config-container {
@@ -344,3 +510,19 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
+
+.edit-config-container input {
+  background-color: rgba(177, 107, 15, 0.603);
+  color: white;
+  border-radius: 15px;
+  border: 1px solid brown;
+}
+
+.btn-profile-changes {
+  border-radius: 15px;
+  background-color: rgba(177, 107, 15);
+  border: 1px solid black;
+  color: white;
+}
+
+/* MEDIAQUERY */

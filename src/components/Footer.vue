@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div>HOLA</div>
-    <div></div>
+    <div>Hola</div>
+    <div>Hola</div>
   </footer>
 </template>
