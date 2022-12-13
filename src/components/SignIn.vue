@@ -4,8 +4,8 @@
   <div class="jesus-sign">
     <div class="header">
       <div class="header-container">
-        <h3 class="header-title">Login Quest toy App</h3>
-        <p class="header-subtitle">Make your world your own quest log!</p>
+        <h3 class="header-title">Login to Questy App</h3>
+        <p class="header-subtitle">Make the world your own quest log!</p>
       </div>
     </div>
 
