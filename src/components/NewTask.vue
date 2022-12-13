@@ -1,6 +1,6 @@
 <template>
   <div class="new-task-container">
-    <h1>Add a new Quest!</h1>
+    <h1 class="main-title">Add a new Quest!</h1>
     <div v-if="showErrorMessage">
       <p class="error-text">{{ errorMessage }}</p>
     </div>

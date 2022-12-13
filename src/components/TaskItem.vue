@@ -2,27 +2,34 @@
   <div class="all-task-container">
     <div class="task-container">
       <div class="task-btn-container">
-        <button class="btn-delete" @click="deleteTask"></button
-        ><img
-          class="trash-img"
-          src="https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928349/Final-yisus-project/Icons/trash_ysfu9c.png"
-          alt=""
-          @click="deleteTask"
-        />
-        <button class="btn-edit" @click="showHide"></button
-        ><img
-          class="pencil-img"
-          src="https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928349/Final-yisus-project/Icons/pencil_tttvwv.png"
-          alt=""
-          @click="showHide"
-        />
-        <button class="btn-check" @click="toogleTask"></button
-        ><img
-          class="check-img"
-          src="https://res.cloudinary.com/dz3wb5q87/image/upload/v1670935976/Final-yisus-project/Icons/check-icon_bz7plg.png"
-          alt=""
-          @click="toogleTask"
-        />
+        <div>
+          <button class="btn-delete" @click="deleteTask"></button
+          ><img
+            class="trash-img"
+            src="https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928349/Final-yisus-project/Icons/trash_ysfu9c.png"
+            alt=""
+            @click="deleteTask"
+          />
+          <button class="btn-edit" @click="showHide"></button
+          ><img
+            class="pencil-img"
+            src="https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928349/Final-yisus-project/Icons/pencil_tttvwv.png"
+            alt=""
+            @click="showHide"
+          />
+          <button class="btn-check" @click="toogleTask"></button
+          ><img
+            class="check-img"
+            src="https://res.cloudinary.com/dz3wb5q87/image/upload/v1670935976/Final-yisus-project/Icons/check-icon_bz7plg.png"
+            alt=""
+            @click="toogleTask"
+          />
+        </div>
+        <div>
+          <div
+            :class="task.is_complete ? `quest-complete` : `quest-incomplete`"
+          ></div>
+        </div>
       </div>
       <div class="edit-task-container" v-show="editTask">
         <input type="text" placeholder="Title" v-model="title" name="title" />
@@ -46,7 +53,6 @@
           <h3 class="task-title">{{ task.title }}</h3>
           <p class="task-description">{{ task.description }}</p>
         </div>
-        <p>{{ task.is_complete }}</p>
       </div>
     </div>
   </div>

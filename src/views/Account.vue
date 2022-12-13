@@ -6,8 +6,14 @@
         <h2>Name: {{ name }}</h2>
         <h2>Username: {{ username }}</h2>
       </div>
-      <div class="exp-bar">EXP BAR</div>
-      <div>Lv.1.</div>
+      <img
+        class="exp-bar-img"
+        src="https://res.cloudinary.com/dz3wb5q87/image/upload/v1670951467/Final-yisus-project/Icons/XPBar_gkm6h6.png"
+        alt=""
+      />
+
+      <div class="exp-bar-text"><p>EXP BAR</p></div>
+      <div class="lvl-text">Lv.1</div>
       <div class="avatar-container">
         <img
           class="avatar-img"

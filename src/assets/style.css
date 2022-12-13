@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Klee+One:wght@400;600&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Klee+One:wght@400;600&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700;1,800&family=Press+Start+2P&display=swap");
 
 /* font-family: 'Indie Flower', cursive; PARA TEXTOS "BONITOS" o de detalle.
 font-family: 'Klee One', cursive; PARA h3/h4 y algunos <p>
-font-family: 'Nunito', sans-serif;  PARA TITULOS h1/h2*/
+font-family: 'Nunito', sans-serif;  PARA TITULOS h1/h2
+font-family: 'Press Start 2P', cursive;
+*/
 
 * {
   /* outline: 1px red solid; */
@@ -11,7 +13,7 @@ font-family: 'Nunito', sans-serif;  PARA TITULOS h1/h2*/
 }
 
 body {
-  font-family: "Nunito", "sans-serif";
+  font-family: "Press Start 2P", cursive;
   width: 100vw;
   overflow-x: hidden;
 }
@@ -28,7 +30,6 @@ body {
 
 .header-subtitle {
   color: white;
-
   font-weight: 500;
   text-align: center;
   font-size: 120%;
@@ -168,6 +169,20 @@ body {
   background-size: cover;
   padding-bottom: 35px;
   min-height: 100vh;
+}
+
+.main-title {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  margin: 10px 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  width: 300px;
+  height: 65px;
 }
 
 /* NAVBAR */
@@ -385,12 +400,13 @@ footer div {
 }
 
 .task-title {
+  margin: 10px 0;
   background-color: #0000006e;
   border-radius: 50px;
-  font-family: "Nunito";
+  font-family: "Press Start 2P", cursive;
   font-weight: 600;
-  font-size: 35px;
-  -webkit-text-stroke: 0.5px black;
+  font-size: 20px;
+  /* -webkit-text-stroke: 0.2px black; */
 }
 .task-description {
   font-family: "Indie Flower", cursive;
@@ -443,21 +459,45 @@ footer div {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
 }
 
 .quest-title {
   color: white;
-  font-size: 29px;
-  background-color: rgba(0, 0, 0, 0.404);
+  font-size: 25px;
+  /* background-color: rgba(0, 0, 0, 0.404);
   border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px; */
 }
 
 .exclamation-title-img {
   width: 17px;
-  background-color: rgba(0, 0, 0, 0.404);
+  /* background-color: rgba(0, 0, 0, 0.404);
   border-top-right-radius: 15px;
-  border-bottom-right-radius: 13px;
+  border-bottom-right-radius: 13px; */
+}
+
+.quest-incomplete {
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928349/Final-yisus-project/Icons/quest-icon-1-exlamation_cigbpo.png);
+  background-color: rgb(255, 0, 0);
+  width: 24px;
+  height: 38px;
+}
+
+.quest-complete {
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928349/Final-yisus-project/Icons/quest-icon-2-questionmark_ejguji.png);
+  background-color: rgb(115, 255, 0);
+  width: 24px;
+  height: 38px;
+}
+
+.task-btn-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* HOME VIEW */
@@ -477,9 +517,46 @@ footer div {
   object-fit: cover;
 }
 
-.user-info {
-  padding: 20px 0 30px 0;
+.user-info h2 {
+  font-size: 20px;
+  padding: 10px 0;
+  margin: 10px 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
 }
+
+.exp-bar-img {
+  width: 450px;
+  max-height: 26px;
+}
+
+.exp-bar-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  width: 130px;
+  height: 17px;
+}
+.lvl-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  width: 75px;
+  height: 17px;
+}
+
 .user-config-container {
   display: flex;
   flex-direction: column-reverse;
@@ -537,7 +614,7 @@ footer div {
 }
 
 /* MEDIAQUERY DESKTOP*/
-@media (min-width: 1023px min-height: 1279px) {
+@media (min-width: 1023px) {
   .jesus {
     background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670843206/Final-yisus-project/Homeview/pixel-art-background-gif.gif);
   }
