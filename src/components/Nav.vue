@@ -5,13 +5,13 @@
       <input type="checkbox" id="burger-menu" />
       <label class="burger-label" for="burger-menu">☰</label>
       <ul class="burger-container">
-        <li class="">
+        <li>
           <router-link class="router-link" to="/"> Home </router-link>
         </li>
-        <li class="">
+        <!-- <li class="">
           <router-link class="router-link" to="/">Task Manager</router-link>
-        </li>
-        <li class="">
+        </li> -->
+        <li>
           <router-link class="router-link" to="/account"
             >Your Account</router-link
           >
@@ -19,11 +19,11 @@
       </ul>
     </div>
     <div class="log-out-container">
-      <div>
+      <!-- <div>
         <p class="salute">Welcome {{ name }}</p>
-      </div>
+      </div> -->
       <div>
-        <button @click="signOut" class="log-out-button">Log out</button>
+        <button @click="signOut" :class="themeBtn">Log out</button>
       </div>
     </div>
   </nav>
@@ -40,6 +40,12 @@ import { useThemeStore } from "../stores/theme";
 
 const theme = computed(() => {
   return useThemeStore().theme === "light" ? "nav-light" : "nav-dark";
+});
+
+const themeBtn = computed(() => {
+  return useThemeStore().theme === "light"
+    ? "log-out-button-light"
+    : "log-out-button-dark";
 });
 //constant to save a variable that will hold the use router method
 const route = "/";

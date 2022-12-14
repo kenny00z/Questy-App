@@ -19,6 +19,13 @@ export const useUserStore = defineStore("user", {
 
         if (profile) this.profile = profile[0];
         console.log("profile in store: ", this.profile);
+
+        // if (profile) {
+        //   this.profile = profile[0];
+        //   console.log("profile in store: ", this.profile);
+        //   if (this.profile.theme) this.theme = "light";
+        //   else this.profile.theme = "dark";
+        // }
       }
     },
 

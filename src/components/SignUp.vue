@@ -1,5 +1,5 @@
 <template>
-  <div class="jesus-sign">
+  <div :class="theme">
     <div class="header">
       <div class="header-container">
         <h3 class="header-title">Register to Questy App</h3>
@@ -77,6 +77,11 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
 import Footer from "../components/Footer.vue";
+import { useThemeStore } from "../stores/theme";
+
+const theme = computed(() => {
+  return useThemeStore().theme === "light" ? "jesus-sign" : "jesus-sign-dark";
+});
 
 // Route Variables
 const route = "/auth/login";

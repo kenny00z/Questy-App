@@ -4,7 +4,7 @@
     <div v-if="showErrorMessage">
       <p class="error-text">{{ errorMessage }}</p>
     </div>
-    <div class="add-task-container">
+    <div :class="theme">
       <div class="input-field-task">
         <input
           type="text"
@@ -21,14 +21,27 @@
           maxlength="48"
         />
       </div>
-      <button @click="addTask" class="add-quest-button">Add Quest</button>
+      <button @click="addTask" :class="themeBtn">Add Quest</button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useTaskStore } from "../stores/task";
+import { useThemeStore } from "../stores/theme";
+
+const theme = computed(() => {
+  return useThemeStore().theme === "light"
+    ? "add-task-container-light"
+    : "add-task-container-dark";
+});
+
+const themeBtn = computed(() => {
+  return useThemeStore().theme === "light"
+    ? "add-quest-button-light"
+    : "add-quest-button-dark";
+});
 
 const taskStore = useTaskStore();
 

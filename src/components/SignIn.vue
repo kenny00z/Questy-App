@@ -1,7 +1,7 @@
 <!-- COMPONENTE BOILERPLATE -->
 
 <template>
-  <div class="jesus-sign">
+  <div :class="theme">
     <div class="header">
       <div class="header-container">
         <h3 class="header-title">Login to Questy App</h3>
@@ -60,11 +60,16 @@
 
 <script setup>
 import PersonalRouter from "./PersonalRouter.vue";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { supabase } from "../supabase";
 import Footer from "../components/Footer.vue";
+import { useThemeStore } from "../stores/theme";
+
+const theme = computed(() => {
+  return useThemeStore().theme === "light" ? "jesus-sign" : "jesus-sign-dark";
+});
 
 // Route Variables
 const route = "/auth/signup";

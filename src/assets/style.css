@@ -33,7 +33,7 @@ body {
   font-weight: 500;
   text-align: center;
   font-size: 120%;
-  margin: 30px;
+  margin: 30px 0;
 }
 
 .container {
@@ -103,7 +103,7 @@ body {
 #question-login {
   margin-top: -5px;
 }
-
+/* FALTA DARK */
 .sign-link {
   color: rgb(255, 254, 254);
   text-decoration: none;
@@ -112,7 +112,14 @@ body {
   border-radius: 10px;
   padding: 6px;
   margin-top: 15px;
+  cursor: pointer;
 }
+
+.sign-link:hover {
+  background-color: rgb(35, 207, 78);
+}
+
+/*  FALTA DARK */
 
 .sign-button {
   font-family: "Klee One", cursive;
@@ -123,7 +130,13 @@ body {
   border: 2px solid rgb(255, 255, 255);
   border-radius: 10px;
   padding: 5px 10px;
+  cursor: pointer;
 }
+
+.sign-button:hover {
+  background-color: rgb(9, 78, 26);
+}
+/*  */
 
 .form-input {
   display: flex;
@@ -165,8 +178,7 @@ body {
 }
 
 .jesus-dark {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(/assets/imgs/dark-theme-img-prueba.gif);
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671036378/Final-yisus-project/Homeview/Dark%20theme/dark-theme-mbl-img_wevpyt.gif);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -180,6 +192,15 @@ body {
   background-size: cover;
   padding-bottom: 35px;
   min-height: 100vh;
+  background-attachment: fixed;
+}
+.jesus-sign-dark {
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671036378/Final-yisus-project/Homeview/Dark%20theme/dark-theme-mbl-img_wevpyt.gif);
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 35px;
+  min-height: 100vh;
+  background-attachment: fixed;
 }
 
 .main-title {
@@ -203,6 +224,7 @@ body {
   background-color: rgb(33, 53, 33);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
   height: 60px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -215,6 +237,7 @@ body {
   background-color: #0d1117;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
   height: 60px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -231,7 +254,7 @@ body {
   padding-inline-start: 0;
 }
 
-.log-out-button {
+.log-out-button-light {
   font-family: "Klee One", cursive;
   color: rgb(255, 254, 254);
   text-decoration: none;
@@ -239,12 +262,27 @@ body {
   border: 2px solid rgb(255, 255, 255);
   border-radius: 10px;
   padding: 3px 7px;
+  cursor: pointer;
+}
+
+.log-out-button-dark {
+  font-family: "Klee One", cursive;
+  color: rgb(255, 254, 254);
+  text-decoration: none;
+  background-color: #010409;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 3px 7px;
+  cursor: pointer;
+}
+.log-out-button-light:hover {
+  background-color: rgb(35, 207, 78);
+}
+.log-out-button-dark:hover {
+  background-color: rgb(66, 7, 68);
 }
 
 /* BURGER MENU */
-.menu-burger-container {
-  margin-top: 10px;
-}
 
 ul {
   display: none;
@@ -274,16 +312,16 @@ li {
   display: block;
   background: rgb(33, 53, 33);
   margin: 0;
-  padding: 10px;
+  padding: 5px;
   list-style: none;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 15px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
 }
 .burger-container {
   width: 100%;
   position: absolute;
-  left: -6%;
-  top: 7.5%;
+  left: -1rem;
+  top: 3.6rem;
 }
 /* BURGER DONE */
 .salute {
@@ -320,14 +358,26 @@ li {
   border-top: 2px solid black;
 }
 
-.footer-logo img {
+.footer-logo-light {
   width: 200px;
+  height: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
   border-radius: 15px;
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670971750/Final-yisus-project/Logo%20images/proyecto_logo-final-black_rgjagp.png);
+}
+.footer-logo-dark {
+  width: 190px;
+  height: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671052912/Final-yisus-project/Logo%20images/proyecto_logo-final-white_yuontl.png);
 }
 
 .contact-us-container p {
   color: white;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 /* FOOTER */
@@ -345,27 +395,55 @@ li {
   flex-direction: column;
 }
 
-.add-task-container input {
+.add-task-container-light input {
   background-color: rgba(177, 107, 15, 0.603);
   color: white;
   border-radius: 15px;
   border: 1px solid brown;
   text-align: center;
 }
-.add-task-container input::placeholder {
+
+.add-task-container-dark input {
+  background-color: rgb(13, 17, 23, 0.6);
+  color: white;
+  border-radius: 15px;
+  border: 1px solid rgb(4, 2, 85);
+  text-align: center;
+}
+
+.add-task-container-light input::placeholder {
   color: white;
 }
 
-.add-quest-button {
+.add-task-container-dark input::placeholder {
+  color: white;
+}
+
+.add-quest-button-light {
+  width: 175px;
   margin-top: 1px;
   border-radius: 15px;
   background-color: rgba(177, 107, 15);
   border: 1px solid black;
   color: white;
+  cursor: pointer;
 }
 
-.add-quest-button:hover {
+.add-quest-button-dark {
+  width: 175px;
+  margin-top: 1px;
+  border-radius: 15px;
+  background-color: #0d1117;
+  border: 1px solid rgb(4, 2, 85);
+  color: white;
+  cursor: pointer;
+}
+
+.add-quest-button-light:hover {
   background-color: rgb(17, 128, 44);
+}
+.add-quest-button-dark:hover {
+  background-color: rgb(66, 7, 68);
 }
 /* NEW TASK */
 
@@ -388,18 +466,19 @@ li {
 
 .btn-delete {
   background-color: red;
-
   border: 2px solid black;
   width: 25px;
   height: 25px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .trash-img {
   width: 6%;
   position: absolute;
-  top: 2.8px;
-  left: 3.5px;
+  top: 0.28rem;
+  left: 0.25rem;
+  cursor: pointer;
 }
 
 .btn-edit {
@@ -408,13 +487,15 @@ li {
   width: 25px;
   height: 25px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .pencil-img {
   width: 5.5%;
   position: absolute;
-  top: 4px;
-  left: 29px;
+  top: 0.32rem;
+  left: 1.88rem;
+  cursor: pointer;
 }
 
 .btn-check {
@@ -423,13 +504,15 @@ li {
   width: 25px;
   height: 25px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .check-img {
   width: 5%;
   position: absolute;
-  top: 4.2px;
-  left: 55px;
+  top: 0.36rem;
+  left: 3.48rem;
+  cursor: pointer;
 }
 
 .task-text-container {
@@ -475,12 +558,14 @@ li {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .save-edit-img {
   width: 10%;
   position: absolute;
-  top: 48px;
-  left: 80px;
+  top: 3rem;
+  left: 5rem;
+  cursor: pointer;
 }
 
 .edit-task-container input {
@@ -555,6 +640,8 @@ li {
   margin-top: 40px;
   margin-right: auto;
   margin-left: auto;
+  width: 150px;
+  height: 150px;
 }
 
 .avatar-img {
@@ -616,12 +703,14 @@ li {
   align-items: center;
 }
 
+/* FALTA DARK */
 .user-config-btn {
   width: 200px;
   border-radius: 15px;
   background-color: rgba(177, 107, 15);
   border: 1px solid black;
   color: white;
+  cursor: pointer;
 }
 
 .edit-config-container {
@@ -635,6 +724,7 @@ li {
   margin-right: auto;
 }
 
+/* FALTA DARK */
 .edit-config-container input {
   background-color: rgba(177, 107, 15, 0.603);
   color: white;
@@ -642,21 +732,49 @@ li {
   border: 1px solid brown;
 }
 
+/* FALTA DARK */
 .btn-profile-changes {
   border-radius: 15px;
   background-color: rgba(177, 107, 15);
   border: 1px solid black;
   color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
 }
 
 /* MEDIA QUERY TABLET */
-@media (min-width: 700px) {
+@media (min-width: 550px) {
   .jesus {
-    background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670843206/Final-yisus-project/Homeview/pixel-art-background-gif.gif);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670843206/Final-yisus-project/Homeview/pixel-art-background-gif.gif);
   }
 
   .jesus-sign {
     background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670843206/Final-yisus-project/Homeview/pixel-art-background-gif.gif);
+  }
+
+  .jesus-dark {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+      url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671036385/Final-yisus-project/Homeview/Dark%20theme/dark-theme-img-prueba_nc3lpq.gif);
+  }
+
+  .jesus-sign-dark {
+    background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671036378/Final-yisus-project/Homeview/Dark%20theme/dark-theme-mbl-img_wevpyt.gif);
+  }
+
+  .desktop-task-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 8px;
+  }
+  .task-container {
+    max-width: 300px;
+    min-width: 300px;
   }
 }
 
@@ -671,6 +789,14 @@ li {
     background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670843206/Final-yisus-project/Homeview/pixel-art-background-gif.gif);
   }
 
+  .jesus-dark {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+      url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671036385/Final-yisus-project/Homeview/Dark%20theme/dark-theme-img-prueba_nc3lpq.gif);
+  }
+
+  .jesus-sign-dark {
+    background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671036385/Final-yisus-project/Homeview/Dark%20theme/dark-theme-img-prueba_nc3lpq.gif);
+  }
   /* .desktop-task-container {
     display: flex;
     flex-direction: row;
@@ -684,6 +810,7 @@ li {
     max-width: 95%;
     margin-left: auto;
     margin-right: auto;
+    column-gap: 15px;
   }
 
   .task-container {
@@ -692,18 +819,45 @@ li {
   }
 
   .nav-dark {
-    padding: 0 30px;
+    padding: 0 50px;
+    align-items: center;
   }
 
   .nav-light {
-    padding: 0 30px;
+    padding: 0 50px;
+    align-items: center;
   }
 
   .footer-dark {
-    padding: 0 30px;
+    padding: 0 50px;
   }
 
   .footer-light {
-    padding: 0 30px;
+    padding: 0 50px;
+  }
+
+  ul {
+    display: block;
+  }
+
+  .burger-label {
+    display: none;
+  }
+  .burger-container {
+    display: block;
+    position: static;
+    display: flex;
+    padding-inline-start: 0;
+  }
+
+  li {
+    border: none;
+    background: none;
+    border-radius: none;
+  }
+
+  .contact-us-container p {
+    color: white;
+    font-size: 15px;
   }
 }
