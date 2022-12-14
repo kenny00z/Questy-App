@@ -28,12 +28,12 @@
     </div>
     <div>
       <div class="user-config-container">
-        <button class="user-config-btn" @click="configProfile">
+        <button :class="themeBtnConfig" @click="configProfile">
           User config
         </button>
       </div>
 
-      <div class="edit-config-container" v-show="editProfile">
+      <div :class="themeConfigUser" v-show="editProfile">
         <label for="username">Username: </label>
         <input type="text" name="username" id="" v-model="username" />
         <br />
@@ -43,11 +43,7 @@
         <label for="avatar_url">Avatar: </label>
         <input type="text" name="avatar_url" id="" v-model="avatar_url" />
         <br />
-        <button
-          class="btn-profile-changes"
-          type="submit"
-          @click="updateProfile"
-        >
+        <button :class="themeBtnSave" type="submit" @click="updateProfile">
           Save changes!
         </button>
       </div>
@@ -68,11 +64,21 @@ const theme = computed(() => {
 });
 
 const themeBtnConfig = computed(() => {
-  return useThemeStore().theme === "light" ? "jesus" : "jesus-dark";
+  return useThemeStore().theme === "light"
+    ? "user-config-btn-light"
+    : "user-config-btn-dark";
 });
 
 const themeBtnSave = computed(() => {
-  return useThemeStore().theme === "light" ? "jesus" : "jesus-dark";
+  return useThemeStore().theme === "light"
+    ? "btn-profile-changes-light"
+    : "btn-profile-changes-dark";
+});
+
+const themeConfigUser = computed(() => {
+  return useThemeStore().theme === "light"
+    ? "edit-config-container-light"
+    : "edit-config-container-dark";
 });
 
 const userStore = useUserStore();

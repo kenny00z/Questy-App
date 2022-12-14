@@ -31,7 +31,7 @@
           ></div>
         </div>
       </div>
-      <div class="edit-task-container" v-show="editTask">
+      <div :class="theme" v-show="editTask">
         <input
           type="text"
           placeholder="Title"
@@ -65,9 +65,20 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
+import { useThemeStore } from "../stores/theme";
+
+const theme = computed(() => {
+  return useThemeStore().theme === "light"
+    ? "edit-task-container-light"
+    : "edit-task-container-dark";
+});
+
+const themeInput = computed(() => {
+  return useThemeStore().theme === "light" ? "nav-light" : "nav-dark";
+});
 
 const title = ref(props.task.title);
 const description = ref(props.task.description);

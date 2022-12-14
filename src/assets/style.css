@@ -484,7 +484,7 @@ input:checked ~ .burger-container {
 }
 
 .trash-img {
-  width: 6%;
+  width: 1.1rem;
   position: absolute;
   top: 0.28rem;
   left: 0.25rem;
@@ -501,7 +501,7 @@ input:checked ~ .burger-container {
 }
 
 .pencil-img {
-  width: 5.5%;
+  width: 1rem;
   position: absolute;
   top: 0.32rem;
   left: 1.88rem;
@@ -518,10 +518,26 @@ input:checked ~ .burger-container {
 }
 
 .check-img {
-  width: 5%;
+  width: 1rem;
   position: absolute;
   top: 0.36rem;
   left: 3.48rem;
+  cursor: pointer;
+}
+
+.btn-save-edit {
+  background-color: rgb(14, 17, 201);
+  border: 2px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.save-edit-img {
+  width: 1.1rem;
+  position: absolute;
+  top: 3rem;
+  left: 5rem;
   cursor: pointer;
 }
 
@@ -553,7 +569,7 @@ input:checked ~ .burger-container {
   line-height: 100%;
   overflow-wrap: break-word;
 }
-.edit-task-container {
+.edit-task-container-light {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -562,23 +578,16 @@ input:checked ~ .burger-container {
   left: 58px;
 }
 
-.btn-save-edit {
-  background-color: rgb(14, 17, 201);
-  border: 2px solid black;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.save-edit-img {
-  width: 10%;
+.edit-task-container-dark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
-  top: 3rem;
-  left: 5rem;
-  cursor: pointer;
+  top: 50px;
+  left: 58px;
 }
 
-.edit-task-container input {
+.edit-task-container-light input {
   background-color: #b16b0fe6;
   color: white;
   border-radius: 15px;
@@ -586,7 +595,19 @@ input:checked ~ .burger-container {
   text-align: center;
 }
 
-.edit-task-container input::placeholder {
+.edit-task-container-dark input {
+  background-color: rgb(13, 17, 23, 0.9);
+  color: white;
+  border-radius: 15px;
+  border: 2px solid rgb(1, 0, 27);
+  text-align: center;
+}
+
+.edit-task-container-light input::placeholder {
+  color: white;
+}
+
+.edit-task-container- input::placeholder {
   color: white;
 }
 
@@ -714,7 +735,7 @@ input:checked ~ .burger-container {
 }
 
 /* FALTA DARK */
-.user-config-btn {
+.user-config-btn-light {
   width: 200px;
   border-radius: 15px;
   background-color: rgba(177, 107, 15);
@@ -723,7 +744,34 @@ input:checked ~ .burger-container {
   cursor: pointer;
 }
 
-.edit-config-container {
+.user-config-btn-dark {
+  width: 200px;
+  border-radius: 15px;
+  background-color: #0d1117;
+  border: 1px solid rgb(4, 2, 85);
+  color: white;
+  cursor: pointer;
+}
+
+.user-config-btn-light:hover {
+  background-color: rgb(17, 128, 44);
+}
+
+.user-config-btn-dark:hover {
+  background-color: rgb(66, 7, 68);
+}
+
+.edit-config-container-light {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.edit-config-container-dark {
   color: white;
   display: flex;
   flex-direction: column;
@@ -735,21 +783,45 @@ input:checked ~ .burger-container {
 }
 
 /* FALTA DARK */
-.edit-config-container input {
+.edit-config-container-light input {
   background-color: rgba(177, 107, 15, 0.603);
   color: white;
   border-radius: 15px;
   border: 1px solid brown;
 }
 
+.edit-config-container-dark input {
+  background-color: rgb(13, 17, 23, 0.6);
+  color: white;
+  border-radius: 15px;
+  border: 1px solid rgb(4, 2, 85);
+}
+
 /* FALTA DARK */
-.btn-profile-changes {
+.btn-profile-changes-light {
   border-radius: 15px;
   background-color: rgba(177, 107, 15);
   border: 1px solid black;
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
+}
+
+.btn-profile-changes-dark {
+  border-radius: 15px;
+  background-color: #0d1117;
+  border: 1px solid rgb(4, 2, 85);
+  color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.btn-profile-changes-light:hover {
+  background-color: rgb(17, 128, 44);
+}
+
+.btn-profile-changes-dark:hover {
+  background-color: rgb(66, 7, 68);
 }
 
 /* MEDIA QUERY TABLET */
