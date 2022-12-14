@@ -288,7 +288,7 @@ ul {
   display: none;
 }
 
-input:checked ~ ul {
+input:checked ~ .burger-container {
   display: block;
 }
 #burger-menu {
@@ -306,11 +306,21 @@ input:checked ~ ul {
   font-weight: bold;
   text-align: center;
   user-select: none;
+  cursor: pointer;
 }
 
-li {
+.burger-li-light {
   display: block;
   background: rgb(33, 53, 33);
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
+}
+.burger-li-dark {
+  display: block;
+  background: #0d1117;
   margin: 0;
   padding: 5px;
   list-style: none;
@@ -367,7 +377,7 @@ li {
   background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670971750/Final-yisus-project/Logo%20images/proyecto_logo-final-black_rgjagp.png);
 }
 .footer-logo-dark {
-  width: 190px;
+  width: 200px;
   height: 45px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -850,7 +860,19 @@ li {
     padding-inline-start: 0;
   }
 
-  li {
+  .router-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+  }
+
+  .burger-li-light {
+    display: flex;
+    border: none;
+    background: none;
+    border-radius: none;
+  }
+  .burger-li-dark {
     border: none;
     background: none;
     border-radius: none;

@@ -5,13 +5,13 @@
       <input type="checkbox" id="burger-menu" />
       <label class="burger-label" for="burger-menu">☰</label>
       <ul class="burger-container">
-        <li>
+        <li :class="themeBurger">
           <router-link class="router-link" to="/"> Home </router-link>
         </li>
         <!-- <li class="">
           <router-link class="router-link" to="/">Task Manager</router-link>
         </li> -->
-        <li>
+        <li :class="themeBurger">
           <router-link class="router-link" to="/account"
             >Your Account</router-link
           >
@@ -47,6 +47,13 @@ const themeBtn = computed(() => {
     ? "log-out-button-light"
     : "log-out-button-dark";
 });
+
+const themeBurger = computed(() => {
+  return useThemeStore().theme === "light"
+    ? "burger-li-light"
+    : "burger-li-dark";
+});
+
 //constant to save a variable that will hold the use router method
 const route = "/";
 const buttonText = "Todo app";

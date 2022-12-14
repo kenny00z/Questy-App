@@ -67,6 +67,14 @@ const theme = computed(() => {
   return useThemeStore().theme === "light" ? "jesus" : "jesus-dark";
 });
 
+const themeBtnConfig = computed(() => {
+  return useThemeStore().theme === "light" ? "jesus" : "jesus-dark";
+});
+
+const themeBtnSave = computed(() => {
+  return useThemeStore().theme === "light" ? "jesus" : "jesus-dark";
+});
+
 const userStore = useUserStore();
 
 const profile = ref({
