@@ -32,13 +32,19 @@
         </div>
       </div>
       <div class="edit-task-container" v-show="editTask">
-        <input type="text" placeholder="Title" v-model="title" name="title" />
+        <input
+          type="text"
+          placeholder="Title"
+          v-model="title"
+          name="title"
+          maxlength="24"
+        />
         <input
           type="text"
           placeholder="Description"
           v-model="description"
           name="description"
-          maxlength="30"
+          maxlength="48"
         />
         <button class="btn-save-edit" @click="updateTask"></button>
         <img

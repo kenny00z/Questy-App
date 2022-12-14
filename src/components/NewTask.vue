@@ -6,14 +6,19 @@
     </div>
     <div class="add-task-container">
       <div class="input-field-task">
-        <input type="text" placeholder="Add a Quest Title" v-model="name" />
+        <input
+          type="text"
+          placeholder="Add a Quest Title"
+          v-model="name"
+          maxlength="24"
+        />
       </div>
       <div class="input-field-task">
         <input
           type="text"
           placeholder="Add a Quest Description"
           v-model="description"
-          maxlength="30"
+          maxlength="48"
         />
       </div>
       <button @click="addTask" class="add-quest-button">Add Quest</button>

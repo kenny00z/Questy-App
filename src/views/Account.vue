@@ -1,6 +1,6 @@
 <template>
   <Nav />
-  <div class="jesus">
+  <div :class="theme">
     <div class="user-config-container">
       <div class="user-info">
         <h2>Name: {{ name }}</h2>
@@ -57,10 +57,16 @@
 </template>
 
 <script setup>
-import { onMounted, ref, toRefs } from "vue";
+import { onMounted, ref, toRefs, computed } from "vue";
 import { useUserStore } from "../stores/user";
 import Nav from "../components/Nav.vue";
 import Footer from "../components/Footer.vue";
+import { useThemeStore } from "../stores/theme";
+
+const theme = computed(() => {
+  return useThemeStore().theme === "light" ? "jesus" : "jesus-dark";
+});
+
 const userStore = useUserStore();
 
 const profile = ref({

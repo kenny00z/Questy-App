@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer :class="theme">
     <div class="footer-logo">
       <img
         src="https://res.cloudinary.com/dz3wb5q87/image/upload/v1670971750/Final-yisus-project/Logo%20images/proyecto_logo-final-black_rgjagp.png"
@@ -12,3 +12,12 @@
     </div>
   </footer>
 </template>
+
+<script setup>
+import { useThemeStore } from "../stores/theme";
+import { computed } from "vue";
+
+const theme = computed(() => {
+  return useThemeStore().theme === "light" ? "footer-light" : "footer-dark";
+});
+</script>

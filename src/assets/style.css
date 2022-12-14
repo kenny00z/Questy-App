@@ -161,6 +161,17 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
+  background-attachment: fixed;
+}
+
+.jesus-dark {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(/assets/imgs/dark-theme-img-prueba.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-attachment: fixed;
 }
 
 .jesus-sign {
@@ -187,9 +198,21 @@ body {
 
 /* NAVBAR */
 
-nav {
+.nav-light {
   font-family: "Klee One", cursive;
   background-color: rgb(33, 53, 33);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-bottom: 2px solid black;
+}
+.nav-dark {
+  font-family: "Klee One", cursive;
+  background-color: #0d1117;
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
@@ -270,9 +293,22 @@ li {
 
 /* FOOTER */
 
-footer {
+.footer-light {
   font-family: "Klee One", cursive;
   background-color: rgb(33, 53, 33);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 60px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-top: 2px solid black;
+}
+.footer-dark {
+  font-family: "Klee One", cursive;
+  background-color: #0d1117;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -406,12 +442,13 @@ footer {
 }
 
 .task-title {
-  margin: 10px 0;
+  margin-bottom: 5px;
   background-color: #0000006e;
   border-radius: 50px;
   font-family: "Press Start 2P", cursive;
   font-weight: 600;
   font-size: 20px;
+  overflow-wrap: break-word;
   /* -webkit-text-stroke: 0.2px black; */
 }
 .task-description {
@@ -489,16 +526,20 @@ footer {
 
 .quest-incomplete {
   background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928349/Final-yisus-project/Icons/quest-icon-1-exlamation_cigbpo.png);
-  background-color: rgb(255, 0, 0);
-  width: 24px;
-  height: 38px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 35px;
 }
 
 .quest-complete {
   background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928349/Final-yisus-project/Icons/quest-icon-2-questionmark_ejguji.png);
-  background-color: rgb(115, 255, 0);
-  width: 24px;
-  height: 38px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 35px;
 }
 
 .task-btn-container {
@@ -622,10 +663,47 @@ footer {
 /* MEDIAQUERY DESKTOP*/
 @media (min-width: 1023px) {
   .jesus {
-    background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670843206/Final-yisus-project/Homeview/pixel-art-background-gif.gif);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670843206/Final-yisus-project/Homeview/pixel-art-background-gif.gif);
   }
 
   .jesus-sign {
     background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670843206/Final-yisus-project/Homeview/pixel-art-background-gif.gif);
+  }
+
+  /* .desktop-task-container {
+    display: flex;
+    flex-direction: row;
+  } */
+
+  .desktop-task-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .task-container {
+    max-width: 300px;
+    min-width: 300px;
+  }
+
+  .nav-dark {
+    padding: 0 30px;
+  }
+
+  .nav-light {
+    padding: 0 30px;
+  }
+
+  .footer-dark {
+    padding: 0 30px;
+  }
+
+  .footer-light {
+    padding: 0 30px;
   }
 }

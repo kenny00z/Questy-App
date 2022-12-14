@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav :class="theme">
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
     <div class="menu-burger-container">
       <input type="checkbox" id="burger-menu" />
@@ -36,6 +36,11 @@ import { useUserStore } from "../stores/user";
 import { computed, ref } from "vue";
 import { useRouter } from "vue-router";
 import { supabase } from "../supabase";
+import { useThemeStore } from "../stores/theme";
+
+const theme = computed(() => {
+  return useThemeStore().theme === "light" ? "nav-light" : "nav-dark";
+});
 //constant to save a variable that will hold the use router method
 const route = "/";
 const buttonText = "Todo app";

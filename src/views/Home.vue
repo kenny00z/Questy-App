@@ -1,7 +1,10 @@
 <template>
   <Nav />
 
-  <div class="jesus">
+  <div :class="theme">
+    <button @click="useThemeStore().toogleTheme" class="btn-theme">
+      Theme
+    </button>
     <NewTask @getTasks="getTasks" />
     <div class="quest-title-container">
       <h2 class="quest-title">Quest Log</h2>
@@ -11,14 +14,16 @@
         alt=""
       />
     </div>
-    <TaskItem
-      @toogleTask="toogleTask"
-      @deleteTask="deleteTask"
-      @getTasks="getTasks"
-      v-for="task in tasks"
-      :key="task.id"
-      :task="task"
-    />
+    <div class="desktop-task-container">
+      <TaskItem
+        @toogleTask="toogleTask"
+        @deleteTask="deleteTask"
+        @getTasks="getTasks"
+        v-for="task in tasks"
+        :key="task.id"
+        :task="task"
+      />
+    </div>
   </div>
   <!-- <div class="jesus-blur">
     <h1>Soy jesus</h1>
@@ -29,13 +34,18 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useTaskStore } from "../stores/task";
+import { useThemeStore } from "../stores/theme";
 import { useRouter } from "vue-router";
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
 import Footer from "../components/Footer.vue";
+
+const theme = computed(() => {
+  return useThemeStore().theme === "light" ? "jesus" : "jesus-dark";
+});
 
 const taskStore = useTaskStore();
 
