@@ -61,6 +61,23 @@ body {
   opacity: 0.7;
 }
 
+.big-purple-box {
+  position: relative;
+  margin: 0 5px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Klee One", cursive;
+  padding-top: 15px;
+  height: 500px;
+  max-width: 350px;
+  margin-bottom: 20px;
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671068432/Final-yisus-project/Homeview/background-img2-dark-theme_pw5drq.jpg);
+  border-radius: 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+}
+
 .sign-in-form {
   position: relative;
   top: -500px;
@@ -74,7 +91,7 @@ body {
   margin-top: 10px;
   text-align: center;
 }
-.sign-up-container {
+.sign-up-container-green {
   background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1670928401/Final-yisus-project/Homeview/dec%C3%A1gono-final-1_rmblf3.png);
   background-size: cover;
   margin-right: auto;
@@ -82,8 +99,16 @@ body {
   background-repeat: no-repeat;
   height: 310px;
   max-width: 300px;
-  /* height: 100vw;
-  max-width: 56vh; */
+}
+
+.sign-up-container-purple {
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671067908/Final-yisus-project/Homeview/dec%C3%A1gono-final-purple_bmknjn.png);
+  background-size: cover;
+  margin-right: auto;
+  margin-left: auto;
+  background-repeat: no-repeat;
+  height: 310px;
+  max-width: 300px;
 }
 
 .account-question {
@@ -103,25 +128,8 @@ body {
 #question-login {
   margin-top: -5px;
 }
-/* FALTA DARK */
-.sign-link {
-  color: rgb(255, 254, 254);
-  text-decoration: none;
-  background-color: rgb(17, 128, 44);
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 10px;
-  padding: 6px;
-  margin-top: 15px;
-  cursor: pointer;
-}
 
-.sign-link:hover {
-  background-color: rgb(35, 207, 78);
-}
-
-/*  FALTA DARK */
-
-.sign-button {
+.sign-button-light {
   font-family: "Klee One", cursive;
   margin-top: 5px;
   color: rgb(255, 254, 254);
@@ -133,8 +141,24 @@ body {
   cursor: pointer;
 }
 
-.sign-button:hover {
+.sign-button-light:hover {
   background-color: rgb(9, 78, 26);
+}
+
+.sign-button-dark {
+  font-family: "Klee One", cursive;
+  margin-top: 5px;
+  color: rgb(255, 254, 254);
+  text-decoration: none;
+  background-color: #2c0031;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.sign-button-dark:hover {
+  background-color: rgb(148, 15, 153);
 }
 /*  */
 

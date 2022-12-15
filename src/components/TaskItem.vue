@@ -69,15 +69,16 @@ import { ref, computed } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
 import { useThemeStore } from "../stores/theme";
+import { useUserStore } from "../stores/user";
 
 const theme = computed(() => {
-  return useThemeStore().theme === "light"
+  return userStore.theme === "light"
     ? "edit-task-container-light"
     : "edit-task-container-dark";
 });
 
 const themeInput = computed(() => {
-  return useThemeStore().theme === "light" ? "nav-light" : "nav-dark";
+  return userStore.theme === "light" ? "nav-light" : "nav-dark";
 });
 
 const title = ref(props.task.title);
@@ -89,6 +90,7 @@ const showHide = () => {
 };
 
 const taskStore = useTaskStore();
+const userStore = useUserStore();
 
 const props = defineProps({
   task: Object,

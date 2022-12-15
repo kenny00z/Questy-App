@@ -16,14 +16,15 @@
 <script setup>
 import { useThemeStore } from "../stores/theme";
 import { computed } from "vue";
+import { useUserStore } from "../stores/user";
+
+const userStore = useUserStore();
 
 const theme = computed(() => {
-  return useThemeStore().theme === "light" ? "footer-light" : "footer-dark";
+  return userStore.theme === "light" ? "footer-light" : "footer-dark";
 });
 
 const themeLogo = computed(() => {
-  return useThemeStore().theme === "light"
-    ? "footer-logo-light"
-    : "footer-logo-dark";
+  return userStore.theme === "light" ? "footer-logo-light" : "footer-logo-dark";
 });
 </script>

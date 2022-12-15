@@ -1,10 +1,10 @@
 <template>
   <Nav />
 
-  <div :class="theme">
+  <div :class="themeSwitch">
     <div class="mork-move">
-      <button @click="useThemeStore().toogleTheme" :class="themeBtn"></button>
-      <div @click="useThemeStore().toogleTheme" :class="themeSuoon"></div>
+      <button @click="toogleTheme" :class="themeBtn"></button>
+      <div @click="toogleTheme" :class="themeSuoon"></div>
     </div>
     <NewTask @getTasks="getTasks" />
     <div class="quest-title-container">
@@ -43,26 +43,30 @@ import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
 import Footer from "../components/Footer.vue";
+import { useUserStore } from "../stores/user";
 
-const theme = computed(() => {
-  return useThemeStore().theme === "light" ? "jesus" : "jesus-dark";
+const themeSwitch = computed(() => {
+  return userStore.theme === "light" ? "jesus" : "jesus-dark";
 });
 
+//COMPUTADAS ( CUANDO SE EJECUTAN LOS CAMBIOS DEFINIDOS DENTRO DE LA FUNCION ESTA SE LLAMA A SI MISMA)
+
 const themeBtn = computed(() => {
-  return useThemeStore().theme === "light"
-    ? "btn-theme-light"
-    : "btn-theme-dark";
+  return userStore.theme === "light" ? "btn-theme-light" : "btn-theme-dark";
 });
 
 const themeSuoon = computed(() => {
-  return useThemeStore().theme === "light" ? "sun-icon" : "moon-icon";
+  return userStore.theme === "light" ? "sun-icon" : "moon-icon";
 });
 
 const taskStore = useTaskStore();
 
+const userStore = useUserStore();
+
+const theme = ref(false);
+
 // Variable para guardar las tareas de supabase
 const tasks = ref([]);
-
 // Creamos una función que conecte a la store para conseguir las tareas de supabase
 const getTasks = async () => {
   // console.log("Estamos en get Tasks!");
@@ -81,8 +85,13 @@ const toogleTask = async () => {
   tasks.value = await taskStore.fetchTasks();
   // console.log("Estamos en toggle task emit de home :)");
 };
-
 //toogleTask();
+
+const toogleTheme = async () => {
+  console.log("Estoy mandando a la store: ", userStore.profile.theme);
+  await userStore.toogleTheme();
+  await userStore.fetchUser();
+};
 </script>
 
 <style></style>

@@ -30,21 +30,22 @@
 import { ref, computed } from "vue";
 import { useTaskStore } from "../stores/task";
 import { useThemeStore } from "../stores/theme";
+import { useUserStore } from "../stores/user";
 
 const theme = computed(() => {
-  return useThemeStore().theme === "light"
+  return userStore.theme === "light"
     ? "add-task-container-light"
     : "add-task-container-dark";
 });
 
 const themeBtn = computed(() => {
-  return useThemeStore().theme === "light"
+  return userStore.theme === "light"
     ? "add-quest-button-light"
     : "add-quest-button-dark";
 });
 
 const taskStore = useTaskStore();
-
+const userStore = useUserStore();
 // variables para los valors de los inputs
 const name = ref("");
 const description = ref("");

@@ -34,10 +34,10 @@ export const useTaskStore = defineStore("tasks", {
       });
     },
     async toogleTask(id, boolean) {
-      console.log(
-        "En store estoy recibiendo para mandar a supabase: ",
-        boolean
-      );
+      // console.log(
+      //   "En store estoy recibiendo para mandar a supabase: ",
+      //   boolean
+      // );
       const { data, error } = await supabase
         .from("tasks")
         .update({

@@ -7,11 +7,11 @@
       </div>
     </div>
     <div class="container">
-      <div class="big-green-box"></div>
+      <div :class="themeBox"></div>
       <section class="sign-in-form">
         <div class="section-container">
           <h3 class="create-title">Create your account!</h3>
-          <div class="sign-up-container">
+          <div :class="themeSignBox">
             <form @submit.prevent="signUp" class="form-sign-in">
               <div class="form">
                 <div class="form-input">
@@ -47,17 +47,16 @@
                     required
                   />
                 </div>
-                <button class="sign-button" type="submit">Sign Up</button>
+                <button :class="themeBtn" type="submit">Sign Up</button>
               </div>
               <p class="account-question">
                 Have an account?
                 <PersonalRouter
                   :route="route"
                   :buttonText="buttonText"
-                  class="sign-link"
+                  :class="themeBtn"
                 />
               </p>
-
               <div class="error-msg" v-show="errorMsg">{{ errorMsg }}</div>
             </form>
           </div>
@@ -80,7 +79,21 @@ import Footer from "../components/Footer.vue";
 import { useThemeStore } from "../stores/theme";
 
 const theme = computed(() => {
-  return useThemeStore().theme === "light" ? "jesus-sign" : "jesus-sign-dark";
+  return userStore.theme === "light" ? "jesus-sign" : "jesus-sign-dark";
+});
+
+const themeBox = computed(() => {
+  return userStore.theme === "light" ? "big-green-box" : "big-purple-box";
+});
+
+const themeSignBox = computed(() => {
+  return userStore.theme === "light"
+    ? "sign-up-container-green"
+    : "sign-up-container-purple";
+});
+
+const themeBtn = computed(() => {
+  return userStore.theme === "light" ? "sign-button-light" : "sign-button-dark";
 });
 
 // Route Variables
@@ -91,6 +104,7 @@ const buttonText = "Sign In";
 const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
+const userStore = useUserStore();
 
 // Error Message
 const errorMsg = ref("");

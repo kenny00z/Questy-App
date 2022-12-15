@@ -10,10 +10,10 @@
     </div>
 
     <div class="container">
-      <div class="big-green-box"></div>
+      <div :class="themeBox"></div>
       <section class="sign-in-form">
         <h3 class="create-title">Log In to Questy App</h3>
-        <div class="sign-up-container">
+        <div :class="themeSignBox">
           <form @submit.prevent="signIn" class="form-sign-in">
             <div class="form">
               <div class="form-input">
@@ -39,7 +39,7 @@
                 />
               </div>
 
-              <button class="sign-button" type="submit">Sign In</button>
+              <button :class="themeBtn" type="submit">Sign In</button>
             </div>
           </form>
         </div>
@@ -48,7 +48,7 @@
           <PersonalRouter
             :route="route"
             :buttonText="buttonText"
-            class="sign-link"
+            :class="themeBtn"
           />
         </p>
         <div class="error-msg" v-show="errorMsg">{{ errorMsg }}</div>
@@ -68,7 +68,21 @@ import Footer from "../components/Footer.vue";
 import { useThemeStore } from "../stores/theme";
 
 const theme = computed(() => {
-  return useThemeStore().theme === "light" ? "jesus-sign" : "jesus-sign-dark";
+  return userStore.theme === "light" ? "jesus-sign" : "jesus-sign-dark";
+});
+
+const themeBox = computed(() => {
+  return userStore.theme === "light" ? "big-green-box" : "big-purple-box";
+});
+
+const themeSignBox = computed(() => {
+  return userStore.theme === "light"
+    ? "sign-up-container-green"
+    : "sign-up-container-purple";
+});
+
+const themeBtn = computed(() => {
+  return userStore.theme === "light" ? "sign-button-light" : "sign-button-dark";
 });
 
 // Route Variables
@@ -80,6 +94,7 @@ const password = ref("");
 const errorMsg = ref("");
 
 const redirect = useRouter();
+const userStore = useUserStore();
 
 // Arrow function to Signin user to supaBase
 const signIn = async () => {

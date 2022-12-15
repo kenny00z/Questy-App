@@ -5,6 +5,8 @@ export const useUserStore = defineStore("user", {
     user: null,
     profile: null,
     theme: "light",
+
+    //THIS SE USA PARA APUNTAR A LAS VARIABLES DEL ESTADO DE MI STORE (POR PINIA)
   }),
   actions: {
     async fetchUser() {
@@ -17,15 +19,16 @@ export const useUserStore = defineStore("user", {
           .eq("user_id", this.user.id);
         // .match({ user_id: this.user.id });
 
-        if (profile) this.profile = profile[0];
+        // if (profile) this.profile = profile[0];
         // console.log("profile in store: ", this.profile);
 
-        // if (profile) {
-        //   this.profile = profile[0];
-        //   console.log("profile in store: ", this.profile);
-        //   if (this.profile.theme) this.theme = "light";
-        //   else this.profile.theme = "dark";
-        // }
+        if (profile) {
+          this.profile = profile[0];
+          console.log("profile in store: ", this.profile);
+          console.log(this.profile.theme);
+          if (this.profile.theme) this.theme = "dark";
+          else this.theme = "light";
+        }
       }
     },
 
@@ -88,6 +91,20 @@ export const useUserStore = defineStore("user", {
         ])
         .match({
           user_id: id,
+        });
+    },
+    async toogleTheme() {
+      console.log(
+        "En store estoy recibiendo para mandar a supabase: ",
+        this.profile.theme
+      );
+      const { data, error } = await supabase
+        .from("profiletable")
+        .update({
+          theme: !this.profile.theme,
+        })
+        .match({
+          user_id: this.user.id,
         });
     },
   },

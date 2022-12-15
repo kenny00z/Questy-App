@@ -39,25 +39,23 @@ import { supabase } from "../supabase";
 import { useThemeStore } from "../stores/theme";
 
 const theme = computed(() => {
-  return useThemeStore().theme === "light" ? "nav-light" : "nav-dark";
+  return userStore.theme === "light" ? "nav-light" : "nav-dark";
 });
 
 const themeBtn = computed(() => {
-  return useThemeStore().theme === "light"
+  return userStore.theme === "light"
     ? "log-out-button-light"
     : "log-out-button-dark";
 });
 
 const themeBurger = computed(() => {
-  return useThemeStore().theme === "light"
-    ? "burger-li-light"
-    : "burger-li-dark";
+  return userStore.theme === "light" ? "burger-li-light" : "burger-li-dark";
 });
 
 //constant to save a variable that will hold the use router method
 const route = "/";
 const buttonText = "Todo app";
-
+const userStore = useUserStore();
 // constant to save a variable that will get the user from store with a computed function imported from vue
 // const getUser = computed(() => useUserStore().user);
 const getUser = useUserStore().user;

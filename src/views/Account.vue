@@ -60,23 +60,23 @@ import Footer from "../components/Footer.vue";
 import { useThemeStore } from "../stores/theme";
 
 const theme = computed(() => {
-  return useThemeStore().theme === "light" ? "jesus" : "jesus-dark";
+  return userStore.theme === "light" ? "jesus" : "jesus-dark";
 });
 
 const themeBtnConfig = computed(() => {
-  return useThemeStore().theme === "light"
+  return userStore.theme === "light"
     ? "user-config-btn-light"
     : "user-config-btn-dark";
 });
 
 const themeBtnSave = computed(() => {
-  return useThemeStore().theme === "light"
+  return userStore.theme === "light"
     ? "btn-profile-changes-light"
     : "btn-profile-changes-dark";
 });
 
 const themeConfigUser = computed(() => {
-  return useThemeStore().theme === "light"
+  return userStore.theme === "light"
     ? "edit-config-container-light"
     : "edit-config-container-dark";
 });
