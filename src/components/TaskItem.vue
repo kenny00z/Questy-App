@@ -104,7 +104,7 @@ const deleteTask = async () => {
 };
 
 const toogleTask = async () => {
-  console.log("Estoy mandando a la store: ", props.task.is_complete);
+  // console.log("Estoy mandando a la store: ", props.task.is_complete);
   await taskStore.toogleTask(props.task.id, props.task.is_complete);
   emit("toogleTask");
 };

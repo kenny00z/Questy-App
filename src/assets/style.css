@@ -159,6 +159,14 @@ body {
   font-size: 120%;
   font-weight: 600;
 }
+.input-field:hover {
+  box-shadow: 0 0 5px 1px #4d4d4d;
+}
+.input-field:focus {
+  box-shadow: 0 0 5px 1px #4d4d4d;
+  outline-width: 0px;
+}
+
 .input-field {
   margin-top: 0px;
   border-radius: 25px;
@@ -166,6 +174,63 @@ body {
 }
 
 /* HOME VIEW */
+
+.mork-move {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.btn-theme-light {
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671067908/Final-yisus-project/Homeview/nubes-boton_tgl06v.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+  padding: 5px;
+  width: 70px;
+  height: 29px;
+  margin: 3px 17px 3px 0;
+  cursor: pointer;
+}
+
+.btn-theme-dark {
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671069402/Final-yisus-project/Homeview/estrellas-btn-publicas_w96mti.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+  padding: 5px;
+  width: 70px;
+  height: 29px;
+  margin: 3px 17px 3px 0;
+  cursor: pointer;
+}
+
+.sun-icon {
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671067034/Final-yisus-project/Icons/sol-pixel-v2-borderless_lkpapp.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 26px;
+  height: 26px;
+  position: relative;
+  top: 0.25rem;
+  left: 1.75rem;
+  cursor: pointer;
+}
+
+.moon-icon {
+  background-image: url(https://res.cloudinary.com/dz3wb5q87/image/upload/v1671067035/Final-yisus-project/Icons/luna-pixel-borderless_evejvu.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  top: 0.4rem;
+  left: 4.1rem;
+  cursor: pointer;
+}
 
 .jesus {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -328,7 +393,7 @@ input:checked ~ .burger-container {
   border-radius: 10px;
 }
 .burger-container {
-  width: 100%;
+  width: 55%;
   position: absolute;
   left: -1rem;
   top: 3.6rem;
@@ -472,6 +537,7 @@ input:checked ~ .burger-container {
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  border-radius: 5px;
 }
 
 .btn-delete {
@@ -858,8 +924,20 @@ input:checked ~ .burger-container {
     max-width: 300px;
     min-width: 300px;
   }
-}
+  .btn-theme-light {
+    margin: 3px 17px 3px 0;
+  }
 
+  .btn-theme-dark {
+    margin: 3px 17px 3px 0;
+  }
+  .burger-container {
+    width: 30%;
+    position: absolute;
+    left: -1rem;
+    top: 3.6rem;
+  }
+}
 /* MEDIAQUERY DESKTOP*/
 @media (min-width: 1023px) {
   .jesus {
@@ -930,6 +1008,7 @@ input:checked ~ .burger-container {
     position: static;
     display: flex;
     padding-inline-start: 0;
+    width: 100%;
   }
 
   .router-link {
@@ -953,5 +1032,13 @@ input:checked ~ .burger-container {
   .contact-us-container p {
     color: white;
     font-size: 15px;
+  }
+
+  .btn-theme-light {
+    margin: 3px 47px 3px 0;
+  }
+
+  .btn-theme-dark {
+    margin: 3px 47px 3px 0;
   }
 }

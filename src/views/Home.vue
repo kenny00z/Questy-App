@@ -2,9 +2,10 @@
   <Nav />
 
   <div :class="theme">
-    <button @click="useThemeStore().toogleTheme" class="btn-theme">
-      Theme
-    </button>
+    <div class="mork-move">
+      <button @click="useThemeStore().toogleTheme" :class="themeBtn"></button>
+      <div @click="useThemeStore().toogleTheme" :class="themeSuoon"></div>
+    </div>
     <NewTask @getTasks="getTasks" />
     <div class="quest-title-container">
       <h2 class="quest-title">Quest Log</h2>
@@ -47,6 +48,16 @@ const theme = computed(() => {
   return useThemeStore().theme === "light" ? "jesus" : "jesus-dark";
 });
 
+const themeBtn = computed(() => {
+  return useThemeStore().theme === "light"
+    ? "btn-theme-light"
+    : "btn-theme-dark";
+});
+
+const themeSuoon = computed(() => {
+  return useThemeStore().theme === "light" ? "sun-icon" : "moon-icon";
+});
+
 const taskStore = useTaskStore();
 
 // Variable para guardar las tareas de supabase
@@ -54,7 +65,7 @@ const tasks = ref([]);
 
 // Creamos una función que conecte a la store para conseguir las tareas de supabase
 const getTasks = async () => {
-  console.log("Estamos en get Tasks!");
+  // console.log("Estamos en get Tasks!");
   tasks.value = await taskStore.fetchTasks();
 };
 
@@ -68,7 +79,7 @@ const deleteTask = async () => {
 
 const toogleTask = async () => {
   tasks.value = await taskStore.fetchTasks();
-  console.log("Estamos en toggle task emit de home :)");
+  // console.log("Estamos en toggle task emit de home :)");
 };
 
 //toogleTask();
