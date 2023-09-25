@@ -1,6 +1,6 @@
 https://trello.com/b/XVOjiDCj/final-project-ironhacku
 
-<img src= "https://www.aial.es/wp-content/uploads/2018/11/Logo-Ironhack.jpg">
+<img src= "https://img.weblogssl.com/g/branded/XTK-228293.jpg">
 
 -------------Journaly-------------
 
